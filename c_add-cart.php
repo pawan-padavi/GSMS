@@ -8,3 +8,4 @@ echo "Add To Cart ".$product;
 $connnection = mysqli_connect("localhost","root","","satpuda_online_shop_db");
 $query = "Insert into cart values (cid ,pid, userid,)";
 $result = mysqli_query($connnection,$result);
+//padavi pawnasing randansing
