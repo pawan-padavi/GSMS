@@ -10,3 +10,4 @@ $query = "Insert into cart values (cid ,pid, userid,)";
 $result = mysqli_query($connnection,$result);
 //padavi pawnasing randansing
 //this page is only use for add cart
+//padavi pawansingrandiasg
