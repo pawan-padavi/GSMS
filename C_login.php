@@ -42,7 +42,29 @@
     <script src="Assets/js/bootstrap.js"></script>
     <!-- <script src="CHeader.js"></script> -->
     <script>
-        
+       $(document).ready(function(){
+           $('#c_login').("submit",function(e){
+               e.prevetDefault();
+               var formData = new FormData(this);
+               $.ajax({
+                   url:"c_lgn.php",
+                   type:"POST",
+                   data:formData,
+                   contentType:false,
+                   processData:false,
+                   success : function(data)
+                   {
+                       $('#message').addClass("bg-primary text-light");
+                       setTimeout(funname,30);
+                       function funname()
+                       {
+                        //    document.location.replace('index.php');
+                             document.location.assign("index.php");
+                       }
+                   }
+               })
+           })
+       })
     </script>
 </body>
 </html>

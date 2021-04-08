@@ -100,8 +100,9 @@
                 data:{p_id:p_id},
                 success:function(data)
                 {
-                  $('#cart').addClass('text-light');
-                  $('#cart').html(data);
+                   $('#cart').addClass('text-light');
+                   $('#cart').html(data);
+                
                 }
                  })
             })
