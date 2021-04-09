@@ -11,8 +11,8 @@
     <?php
         include('C_header.php');
     ?>
-    <div class="container"><div class="row"><div class="col-md-12 col-lg-12 col-sm-12">
-        <h2 class="text-danger">Work under construction-My Cart Page</h2>
+    <div class="container"><div class="row"><div class="col-md-12 mt-5">
+        <p class="text-danger">select cr.c_fname,c.c_id, p.p_id, p.p_name from product p inner JOIN cart c inner join client_registration cr ON p.p_id=c.p_id AND c.c_id=cr.c_id</p>
     </div></div></div>
     <?php
         include('footer.php');
