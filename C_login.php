@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Satpuda.com</title>
+    <title>Welcome to GSMS.com</title>
     <link rel="stylesheet" href="Assets/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/css/all.css">
     <style>
@@ -43,7 +43,13 @@
     <script src="Assets/js/bootstrap.js"></script>
     <!-- <script src="CHeader.js"></script> -->
     <script>
-       
+       $(document).ready(function(){
+        $('#login_submit').on("submit",function(){
+            var username =$('#usrname').val();
+            alert("Good Afternoon Padavi pawnasing");
+
+        })
+       })
     </script>
 </body>
 </html>
