@@ -1,3 +1,11 @@
+<?php
+session_start();
+error_reporting(0);
+        if($_SESSION["c_id"]!="")
+        {
+            header("location:index.php");
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,10 +52,38 @@
     <!-- <script src="CHeader.js"></script> -->
     <script>
        $(document).ready(function(){
-        $('#login_submit').on("submit",function(){
-            var username =$('#usrname').val();
-            alert("Good Afternoon Padavi pawnasing");
-
+           $('#c_usrname,#c_pwd').on("focus",function(e){
+               $(this).addClass('bg-warning text-light');
+           })
+           $('#c_usrname,#c_pwd').on("blur",function(e){
+               $(this).removeClass('bg-warning text-light');
+           })
+        $('#c_login').on("submit",function(e){
+            e.preventDefault();
+            var username =$('#c_usrname').val();
+            var password =$('#c_pwd').val();
+            // alert("Good Afternoon" + " "+ username + " " + password);
+            $.ajax({
+                url:"c_lgn.php",
+                type:"POST",
+                data:{c_usrname:username,c_pwd:password},
+                success:function(data)
+                {   
+                    if(data==1)
+                    {
+                        // setTimeout(timing,1200);
+                        //  function timing()
+                        //   {
+                              document.location.assign('index.php');
+                        //   }
+                    }
+                    else
+                    {
+                        $('#message').html(data);
+                        $('#message').addClass('bg-primary text-light alert');
+                    }
+                }
+            })
         })
        })
     </script>

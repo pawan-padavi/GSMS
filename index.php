@@ -100,9 +100,16 @@
                 data:{p_id:p_id},
                 success:function(data)
                 {
-                   $('#cart').addClass('text-light');
-                   $('#cart').html(data);
-                
+                //    $('#cart').addClass('text-light');
+                //    $('#cart').html(data);
+                    if(data==0)
+                    {
+                        alert("This Product Already Added in Cart");
+                    }
+                    else
+                    {
+                       alert(data);
+                    }
                 }
                  })
             })

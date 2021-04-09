@@ -1,3 +1,6 @@
+<?php
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +14,11 @@
     <?php
         include('C_header.php');
     ?>
-    <div class="container"><div class="row"><div class="col-md-12 col-lg-12 col-sm-12">
-        <h2 class="text-danger">Work under construction-My Account Page</h2>
-    </div></div></div>
+    <div class="container"><div class="row"><div class="col-md-12 mt-5">
+        <h5>Name: <a href="#"> <?php echo $_SESSION["c_fname"]?> <?php echo $_SESSION["c_lname"]?></a></h5>
+        <h5>Email: <a href="#"> <?php echo $_SESSION["c_usrname"]?></a></h5>
+        <h5>ID: <a href="#"> <?php echo $_SESSION["c_id"]?></a></h5>
+        </div></div></div>    
     <?php
         include('footer.php');
     ?>

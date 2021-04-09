@@ -1,5 +1,15 @@
 <?php
     session_start();
+    if($_SESSION["c_usrname"]!="")
+    {
+        $username =$_SESSION["c_usrname"];
+        $c_fname =$_SESSION["c_fname"];
+        $c_lname =$_SESSION["c_lname"];
+    }
+    else
+    {
+        header('location:c_login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +56,27 @@
         {
             outline:none;
         }
+        #userinfo
+        {
+            color:white;
+            font-size:1em;
+        }
+        #userinfo a
+        {
+            text-decoration:none;
+            font-size: 1em;
+            font-weight:bolder;
+            text-transform:uppercase;
+            color:indigo;
+        }
+        #userinfo a:hover
+        {
+            color:white;
+        }
+        /* #userinfo a:visited
+        {
+            color:indigo;
+        } */
     </style>
 </head>
 <body>
@@ -65,11 +96,11 @@
     <li class="nav-item"><a href="C_myaccount.php" class="nav-link"><i class="fas fa-user"></i>My Account</a></li>
     </ul>
     <ul class="navbar-nav">
-        <li class="nav-item"><a href="#" class="nav-link"><button class="btn btn-danger">Logout</button></a></li>
+        <li class="nav-item"><a href="c_logout.php" class="nav-link"><button class="btn btn-danger">Logout</button></a></li>
     </ul>
     </nav>
     </div></div>
-    <div class="bg-success"><span class="btn text-left text-light" data-toggle="collapse" data-target="#navbarHide"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center text-light"><b>GSMS</b></span><span class="mt-1 mb-1 pos"><i class="fa fa-shopping-cart text-warning"></i><span id="cart"></span></span></div>
+    <div class="bg-success"><span class="btn text-left text-light" data-toggle="collapse" data-target="#navbarHide"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center text-light"><b>GSMS</b></span><span class="mt-1 mb-1 pos"><i class="fa fa-shopping-cart text-warning"></i></span><span id="userinfo"><a href="C_myaccount.php"><?php echo " Hi ".$c_fname." ".$c_lname; ?></a></span></div>
     <!-- <span id="dp"><ul class="list-unstyled"><li>Logout</li></ul></span> -->
     </div></div></div>
     
