@@ -105,10 +105,12 @@
                     if(data==0)
                     {
                         alert("This Product Already Added in Cart");
+                        document.location.reload();
                     }
                     else
                     {
                        alert(data);
+                       document.location.reload();
                     }
                 }
                  })

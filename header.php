@@ -1,17 +1,9 @@
 <?php
 error_reporting(0);
 session_start();
-$sessiontime = setcookie("stimeout",$_SESSION["aid"],time()-86400,"/");
-if($sessiontime !=0)
-{
-    $_SESSION["aid"];
-    $_SESSION["usrname"];
-    $_SESSION["fname"];
-    $profile=$_SESSION["profile"];  
-    $path="Assets/upload-images/";
+// $sessiontime = setcookie("stimeout",$_SESSION["aid"],time()-86400,"/");
 
-}
-else if(isset($_SESSION["aid"])&& $_SESSION['aid']!=0)
+if(isset($_SESSION["aid"])&& $_SESSION['aid']!=0)
 {
     $_SESSION["aid"];
     $_SESSION["usrname"];

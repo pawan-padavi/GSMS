@@ -1,5 +1,7 @@
 <?php
     session_start();
+    error_reporting(0);
+
     if($_SESSION["c_usrname"]!="")
     {
         $username =$_SESSION["c_usrname"];
@@ -22,7 +24,11 @@
     <link rel="stylesheet" href="anchor.css">
     <style>
         .pos{
-            margin-left:72%;
+            margin-left:60%;
+        }
+        .shopping
+        {
+            font-size:20px;
         }
          .head{
             position:fixed;
@@ -73,10 +79,29 @@
         {
             color:white;
         }
+        .navbar li
+        {
+            display:inline-flex;
+            background-color:whitesmoke;
+            margin:10px 0px 0px 10px;
+            padding:5px;
+            font-size:14px;
+            border:.5px solid whitesmoke;
+            border-radius:10px 0px 0px 10px;
+        }
+        .navbar li:hover{
+            color:white;
+        }
+        #cart
+        {
+            font-size:15px;
+            color:white;
+            
+        }
         /* #userinfo a:visited
         {
             color:indigo;
-        } */
+        } */ 
     </style>
 </head>
 <body>
@@ -95,12 +120,14 @@
     <li class="nav-item"><a href="C_mycart.php" class="nav-link"><i class="fa fa-shopping-cart"></i>My Cart</a></li>
     <li class="nav-item"><a href="C_myaccount.php" class="nav-link"><i class="fas fa-user"></i>My Account</a></li>
     </ul>
-    <ul class="navbar-nav">
-        <li class="nav-item"><a href="c_logout.php" class="nav-link"><button class="btn btn-danger">Logout</button></a></li>
-    </ul>
+        <a href="c_logout.php" class="nav-link"><button class="btn btn-danger btn-lot">Logout</button></a>
     </nav>
     </div></div>
-    <div class="bg-success"><span class="btn text-left text-light" data-toggle="collapse" data-target="#navbarHide"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center text-light"><b>GSMS</b></span><span class="mt-1 mb-1 pos"><i class="fa fa-shopping-cart text-warning"></i></span><span id="userinfo"><a href="C_myaccount.php"><?php echo " Hi ".$c_fname." ".$c_lname; ?></a></span></div>
+    <div class="bg-success"><span class="btn text-left text-light" data-toggle="collapse" data-target="#navbarHide"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center text-light"><b>GSMS</b></span><span class="mt-1 pos"><sup>
+    <div class="badge badge-pill badge-warning"><b id="cart">
+    <?php $count = count($_SESSION["shoping-cart"]); 
+        echo $count;
+     ?></b></div></sup><a href="c_mycart.php" class="mt-2 shopping"><i class="fa fa-shopping-cart fa-1x text-warning"></i></a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="userinfo"><a href="C_myaccount.php"><?php echo " Hi '".$c_fname." ".$c_lname."'"; ?></a></span></div>
     <!-- <span id="dp"><ul class="list-unstyled"><li>Logout</li></ul></span> -->
     </div></div></div>
     
