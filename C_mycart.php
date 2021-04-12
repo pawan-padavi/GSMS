@@ -31,6 +31,7 @@
         include('C_header.php');
     ?>
     <div class="container"><div class="row"><div class="col-md-12 mt">
+    <div id="message"></div>
         <?php
     //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
     //      "p_img"=>$row["p_img"],"p_name"=>$row["p_name"],"p_qnt"=>$row["p_qnt"],"p_measure"=>$row["p_measure"],"p_price"=>$row["p_price"],
@@ -88,7 +89,8 @@
     <script src="CHeader.js"></script>
     <script>
     $(document).ready(function(){
-    $('.add-to-order').on("click",function(){
+    $('.add-to-order').on("click",function(e){
+        e.preventDefault();
         var p_id = $('#p_id').val();
         var cart_id = $('#cart_id').val();
         var c_id = $('#c_id').val();
@@ -101,7 +103,10 @@
             data:{p_id:p_id,c_id:c_id,cart_id:cart_id,p_name:p_name,p_price:p_price,p_quantity:p_quantity},
             success:function(data)
             {
-                alert(data);
+                $('#message').html(data);
+                setTimeout(() => {
+                    document.location.reload();
+                }, 1200);
             }
         })
     })
