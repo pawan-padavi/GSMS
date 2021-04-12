@@ -48,7 +48,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
-                <th scope="col">Total</th>
+                
                 <th scope="col" class="text-center" colspan="2">Action</th>
                 </tr></thead>';
                 foreach($cart as $c)
@@ -57,13 +57,14 @@
                     {
                     $output.="<tbody><form><tr scope='row'>
                     <input type='hidden' name='p_id' id='p_id' value='{$c["p_id"]}'/>
+                    <input type='hidden' name='cart_id' id='cart_id' value='{$c["cart_id"]}'/>
+                    <input type='hidden' name='c_id' id='c_id' value='{$c["c_id"]}'/>
                     <td scope='col'> <img name='p_img' id='p_img' class='thumbnail'src='Assets/upload-images/{$c["p_img"]}' alt='Image not found' value='{$c["p_img"]}'></img></td>
                     <td scope='col'><input type='hidden' name='p_name' id='p_name' value='{$c["p_name"]}'>{$c["p_name"]}-{$c["p_qnt"]}{$c["p_measure"]}</td>
                     <td scope='col'><input type='hidden' class='iprice' name ='iprice' id='iprice' value='{$c["p_price"]}'/>{$c["p_price"]}{$c["c_format"]}</td>
                     <td scope='col'><input data-id='{$c["p_id"]}' class='iquantity' name='iquantity' id='iquantity' type='number' value='1' min='1' max='10' /></td>
-                    <td scope='col'><span class='itotal'>{$c["p_price"]}</span></td>
                     <td scope='col'><button type='button' class='btn btn-primary del-cart' data-id='{$c["p_id"]}'><span><i class='fa fa-trash'></i></span></button></td>
-                    <td scope='col'><button type='submit' class='btn btn-info add-to-order' data-id='{$c["p_id"]}'>Order</button></td>
+                    <td scope='col'><button type='submit' class='btn btn-info add-to-order' data-id='{$c["p_id"]}'>Confirm</button></td>
                     </tr></form></tbody>";
                     }
                 }
@@ -87,14 +88,23 @@
     <script src="CHeader.js"></script>
     <script>
     $(document).ready(function(){
-        
-        $(".iquantity").on("change",function(){
-            var iquantity = $('.iquantity').val();
-            var pid = $('#p_id').val();
-            alert(pid);
-            var iprice = $('.iprice').val();
-            $('.itotal').html(iprice*iquantity);
-         });
+    $('.add-to-order').on("click",function(){
+        var p_id = $('#p_id').val();
+        var cart_id = $('#cart_id').val();
+        var c_id = $('#c_id').val();
+        var p_name = $('#p_name').val();
+        var p_price = $('#iprice').val();
+        var p_quantity = $('#iquantity').val();
+        $.ajax({
+            url:"add-db-cart.php",
+            type:"POST",
+            data:{p_id:p_id,c_id:c_id,cart_id:cart_id,p_name:p_name,p_price:p_price,p_quantity:p_quantity},
+            success:function(data)
+            {
+                alert(data);
+            }
+        })
+    })
     })
     </script>
     <script>
