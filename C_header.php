@@ -111,7 +111,7 @@
     <nav class="navbar navbar-expand-lg navbar-info bg-light">
     <a id="B_name"class="navbar-brand"><h3><i class="fa fa-shopping-cart"></i>GSMS.com</h3></a>
     <ul class="navbar-nav">
-    <li class="nav-item"><a href="#C_allcategories.php" class="nav-link"><i class="fab fa-windows"></i>All Categories</a></li>
+    <li class="nav-item"><a href="index.php" class="nav-link"><i class="fab fa-windows"></i>All Categories</a></li>
     <li class="nav-item"><a href="C_spices.php" class="nav-link"><i class="fab fa-product-hunt"></i>Spices</a></li>
     <li class="nav-item"><a href="C_driedlegumes.php" class="nav-link"><i class="fab fa-first-order"></i>Dried Legumes</a></li>
     <li class="nav-item"><a href="C_grains.php" class="nav-link"><i class="fa fa-list-alt"></i>Grains</a></li>

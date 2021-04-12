@@ -14,7 +14,16 @@
    {
        margin-top:100px;
    }
-  
+   .thumbnail
+   {
+       height:80px;
+       width:75px;
+       border:5px solid white;
+   }
+   .prod-number
+   {
+       width:50px;
+   }
    </style>
 </head>
 <body>
@@ -23,26 +32,42 @@
     ?>
     <div class="container"><div class="row"><div class="col-md-12 mt">
         <?php
+    //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
+    //      "p_img"=>$row["p_img"],"p_name"=>$row["p_name"],"p_qnt"=>$row["p_qnt"],"p_measure"=>$row["p_measure"],"p_price"=>$row["p_price"],
+    //    "c_format"=>$row["c_format"]);
+    //    $path ='Assets/upload-images/';
+
         $cart = $_SESSION["shoping-cart"];
-            // $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db") or die("Data not found"); 
-            // $query = "select cr.c_fname,c.c_id, p.p_id, p.p_name from product p inner JOIN cart c inner join client_registration cr ON p.p_id=c.p_id AND c.c_id=cr.c_id";
-            // $result = mysqli_query($connection,$query) or die("Data not found");
+        // echo"<pre>";
+        // print_r($cart);
+        // echo"</pre>";
             $output="";
-                 $output.='<table class="table table-success table-hover table-borderless"><thead class="thead-dark"><tr scope="row">
-                <th scope="col">Cust Name</th>
-                <th scope="col">Action</th>
+                 $output.='<div class="col-md-6 col-lg-6 col-sm-12">
+                 <table class="table table-sm table-hover table-borderless table-light"><thead class="thead-dark"><tr scope="row">
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+                <th scope="col" class="text-center" colspan="2">Action</th>
                 </tr></thead>';
                 foreach($cart as $c)
                 {
                     if(!empty($c))
                     {
-                    $output.="<tbody><tr scope='row'>
-                    <td scope='col'>{$c["p_id"]}</td>
-                    <td scope='col'><button class='btn btn-primary del-cart' data-id='{$c["p_id"]}'><span><i class='fa fa-trash'></i></span></button></td>
-                    </tr></tbody>";
+                    $output.="<tbody><form><tr scope='row'>
+                    <input type='hidden' name='p_id' id='p_id' value='{$c["p_id"]}'/>
+                    <td scope='col'> <img name='p_img' id='p_img' class='thumbnail'src='Assets/upload-images/{$c["p_img"]}' alt='Image not found' value='{$c["p_img"]}'></img></td>
+                    <td scope='col'><input type='hidden' name='p_name' id='p_name' value='{$c["p_name"]}'>{$c["p_name"]}-{$c["p_qnt"]}{$c["p_measure"]}</td>
+                    <td scope='col'><input type='hidden' class='iprice' name ='iprice' id='iprice' value='{$c["p_price"]}'/>{$c["p_price"]}{$c["c_format"]}</td>
+                    <td scope='col'><input data-id='{$c["p_id"]}' class='iquantity' name='iquantity' id='iquantity' type='number' value='1' min='1' max='10' /></td>
+                    <td scope='col'><span class='itotal'>{$c["p_price"]}</span></td>
+                    <td scope='col'><button type='button' class='btn btn-primary del-cart' data-id='{$c["p_id"]}'><span><i class='fa fa-trash'></i></span></button></td>
+                    <td scope='col'><button type='submit' class='btn btn-info add-to-order' data-id='{$c["p_id"]}'>Order</button></td>
+                    </tr></form></tbody>";
                     }
                 }
-            echo $output.="</table>";    
+            echo $output.="</table></div>";    
         ?>
 
         <p class="text-danger">select cr.c_fname,c.c_id, p.p_id, p.p_name from product p inner JOIN cart c inner join client_registration cr ON p.p_id=c.p_id AND c.c_id=cr.c_id</p>
@@ -62,7 +87,21 @@
     <script src="CHeader.js"></script>
     <script>
     $(document).ready(function(){
-        $(document).on("click",".del-cart",function(){
+        
+        $(".iquantity").on("change",function(){
+            var iquantity = $('.iquantity').val();
+            var pid = $('#p_id').val();
+            alert(pid);
+            var iprice = $('.iprice').val();
+            $('.itotal').html(iprice*iquantity);
+         });
+    })
+    </script>
+    <script>
+    $(document).ready(function(){
+    //script starts Delete products from Cart
+        $(document).on("click",".del-cart",function(e){
+            e.preventDefault();
             var p_id = $(this).data('id');
             // alert("This Id Send for Delete "+ p_id);
             if(confirm("Do you want to Delete this Product form Cart"))
@@ -73,16 +112,14 @@
                 data:{p_id:p_id},
                 success:function(data)
                 {
-                    if(data == 0)
-                    {
-                    alert("Your Product outOf Cart");
                     document.location.reload();
-                    }
                 }
             });
             }
         })
+    // script ended for delete product from cart
+    //script starts for price calculation
     });
-    </script>
+     </script>
 </body>
 </html>

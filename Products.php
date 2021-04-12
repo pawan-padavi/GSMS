@@ -10,6 +10,15 @@
         #product-update-data{
             
         }
+        #buttons li
+        {
+            display:inline-flex;
+            padding:5px;
+        }
+        #buttons li button
+        {
+            border-radius:10px 0px 10px 0px;
+        }
     </style>
 </head>
 <body>
@@ -20,15 +29,15 @@
     <div id="message1" class='mt-2'></div> <div class='mt-2' id="message"></div><center><div id="view_q_delete"></div></center><center><div id="delete"></div></center>
     <div id="product-update"></div>
     <div id="view-img-updt"></div>
-           <center class="mb-2 mt-2">
-           <table class="table table-borderless">
-               <tr>
-                   <th><a href="add-products.php"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Products</button></a></th>
-                   <th><a href="#product-images.php"><button class="btn btn-secondary"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Product Images</button></a></th>
-                   <th><a href="#add-product-discount.php"><button class="btn btn-info">&nbsp;&nbsp;Product Discount</button></a></th>
-                   <th><a href="Add-prod-quantity.php"><button class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Product Quantity</button></a></th>
-               </tr>
-           </table></center>
+           <center class="mb-2 mt-2">            
+           <div id="buttons"><ul>
+                   <li><a href="add-products.php"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Products</button></a></li>
+                   <li><a href="#product-images.php"><button class="btn btn-secondary"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Images</button></a></li>
+                   <li><a href="#add-product-discount.php"><button class="btn btn-info"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Discount</button></a></li>
+                   <li><a href="Add-prod-quantity.php"><button class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Quantity</button></a></li>
+               </ul>
+            </div>
+           </center>
            
     <div id="view-product"></div>
     </div></div></div>

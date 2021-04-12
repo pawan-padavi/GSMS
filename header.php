@@ -50,6 +50,16 @@ else
             z-index:1;
             margin-bottom:auto;
         }
+        .navbar li
+        {
+            display:inline-flex;
+            background-color:whitesmoke;
+            margin:10px 0px 0px 10px;
+            padding:5px;
+            font-size:14px;
+            border:.5px solid whitesmoke;
+            border-radius:10px 0px 0px 10px;
+        }
     </style>
 </head>
 <body>
@@ -65,9 +75,9 @@ else
     <li class="nav-item"><a href="Users.php" class="nav-link"><i class="fa fa-users"></i> Users</a></li>
     <li class="nav-item"><a href="Edit-site.php" class="nav-link"><i class="fas fa-edit"></i> Edit-site</a></li>
     </ul>
-    <ul class="navbar-nav">
-        <li class="nav-item"><a href="logout.php" class="nav-link"><button type="button" class=" ml-5 btn btn-danger">Logout</button></a></li>
-    </ul>
+    
+        <a href="logout.php" class="nav-link"><button type="button" class=" ml-5 btn btn-danger">Logout</button></a>
+    
     <!-- <span id="dp"><ul class="list-unstyled"><li>Logout</li></ul></span> -->
     </nav>
     <div class=" bg-warning clps"><span class="btn text-left text-light" data-toggle="collapse" data-target="#hidenav"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center text-light"><b>GSMS</b></span><span style="margin-left:70%"><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></span>

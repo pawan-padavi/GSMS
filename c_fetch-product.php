@@ -11,15 +11,16 @@
         {
             $star = rand(3,5);
             $price += $row["p_price"];
-             $output.= "<div class='col-md-2 mb-2'>
+             $output.= "<div class='col-md-3 col-lg-3 col-sm-12 mb-3'>
              <div class='card border border-light'>
-            
             <div class='card-body'><center>
-            <img class='' height='90' width='65' src='Assets/upload-images/{$row["p_img"]}'></center>
+            <img class='' height='70' src='Assets/upload-images/{$row["p_img"]}'></center>
             <center><small>{$row["p_name"]}&nbsp;{$row["p_qnt"]}<sub>{$row["p_measure"]}</sub></small></center>
             <div class='text-center'><div class='badge badge-danger'><del>$price</del></div>
             <div class='badge badge-success'><stong>{$row["p_price"]}&nbsp;{$row["c_format"]}</strong></div>&nbsp;<div class='badge badge-warning text-light'>$star<i class='fa fa-star'></i></div>
-            <br><button data-id='{$row["p_id"]}' class='btn Add-cart btn-info'><strong>Add To <i class='fas fa-shopping-cart fa-1x'></i> </strong></button></div>
+            <div id='cart-nd-qunt'>
+            <div><button data-id='{$row["p_id"]}' class='btn Add-cart btn-info'><strong>Add To Cart<i class='fas fa-shopping-cart fa-1x'></i> </strong></button></div>
+            </div></div>
             </div>
             </div></div>";
             $price = 300;

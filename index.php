@@ -12,13 +12,17 @@
     .owl-carousel{
         position:static;
     }
+    #cart-nd-qunt div
+    {
+        display:block;
+        padding:5px;
+    }
     </style>
 </head>
 <body>
     <?php
         include('C_header.php');
     ?>
-    
     <div class="container"><div class="row"><div class="mt-5 col-md-12">
     <div class="owl-carousel owl-theme mt-2">
     <div class="item bg-danger"><img src="Assets/images/1.jpg" class="img-fluid" alt="Image not supported"></div>
@@ -31,7 +35,7 @@
     <div class="item bg-dark"><img src="Assets/images/4.jpg" class="img-fluid" alt="Image not supported"></div>
     </div>    
     </div></div>
-
+    <div id="message"></div>
     <div id="show-Products"></div>
     
 </div>
@@ -76,6 +80,7 @@
     <!-- fetch products starts -->
     <script>
     $(document).ready(function(e){
+        
         $.ajax({
             url:"c_fetch-product.php",
             type:"POST",
@@ -93,25 +98,16 @@
             $(document).on("click",".Add-cart",function(e){
                 e.preventDefault();
                 var p_id = $(this).data('id');
-                // alert(p_id);
+                alert(p_id);
                  $.ajax({
                 url:"c_add-cart.php",
                 type:"POST",
                 data:{p_id:p_id},
                 success:function(data)
                 {
-                //    $('#cart').addClass('text-light');
-                //    $('#cart').html(data);
-                    if(data==0)
-                    {
-                        alert("This Product Already Added in Cart");
-                        document.location.reload();
-                    }
-                    else
-                    {
-                       alert(data);
-                       document.location.reload();
-                    }
+
+                        $('#message').html(data); 
+
                 }
                  })
             })

@@ -5,7 +5,7 @@
     $output= "";
     if(mysqli_num_rows($result) > 0)
     {
-        $output = '<form id=""><table class="table table-md table-bordered table-hover">
+        $output = '<small><form id=""><table class="table table-md table-bordered table-hover">
         <thead class="thead-dark text-center">
         <tr scope="row">
         <th scope="col">ID</th>
@@ -35,7 +35,7 @@
             <td><button data-prod_img='{$row["p_id"]}' class='btn product-img-updt btn-secondary'><i class='fas fa-edit'></i>img</button></td>
             </tr></tbody>";
         }
-        $output .="</table></form>";
+        $output .="</table></form></small>";
         mysqli_close($conn);
         echo $output;
     }
