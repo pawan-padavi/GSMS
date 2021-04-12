@@ -98,7 +98,7 @@
             $(document).on("click",".Add-cart",function(e){
                 e.preventDefault();
                 var p_id = $(this).data('id');
-                alert(p_id);
+                // alert(p_id);
                  $.ajax({
                 url:"c_add-cart.php",
                 type:"POST",
