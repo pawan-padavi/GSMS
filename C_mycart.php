@@ -29,19 +29,19 @@
    {
        width:50px;
    }
-   .container div
+   /* .cnt div
    {
         display:inline-flex;
-   }
+   } */
    </style>
 </head>
 <body>
     <?php
         include('C_header.php');
     ?>
-    <div id="message">class="mt"</div>
-    <div class="container"><div class="row"><div class="col-md-12 mt">
     
+    <div class="container cnt">
+    <div class="row">
         <?php
     //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
     //      "p_img"=>$row["p_img"],"p_name"=>$row["p_name"],"p_qnt"=>$row["p_qnt"],"p_measure"=>$row["p_measure"],"p_price"=>$row["p_price"],
@@ -53,16 +53,16 @@
         // print_r($cart);
         // echo"</pre>";
             $output="";
-                 $output.='<div class="col-md-6 col-lg-6 col-sm-12">
-                 <table class="table table-sm table-hover">
-                 <thead class="thead-light"><tr><th scope="col" class="text-center" colspan="6"><h5>PRODUCTS IN CART</h5></th></tr></thead>
-                 <thead class="thead-light"><tr scope="row">
+                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt">
+                 <table class="table">
+                 <tr><th scope="col" colspan="6">CART ITEMS DETAIL</th></tr>
+                 <tr scope="row">
                  <th scope="col">Image</th>
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
                 <th scope="col" class="text-center" colspan="2">#</th>
-                </tr></thead>';
+                </tr>';
                 foreach($cart as $c)
                 {
                     if(!empty($c))
@@ -82,14 +82,28 @@
                 }
             echo $output.="</table></div>";    
         ?>
-    <div class="col-md-6 col-lg-6 col-sm-12">
-    <h1>Hii guys Im padavi Pawansig Randansing At Post Lakdya Hanuman Tehsil Shirpur Dist Dhule</h1>
+    <div class="col-md-6 col-lg-6 col-sm-12 mt">
+    <table class="table">
+    <tr><th colspan="4">ORDER DETAILS</th></tr>
+    <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>quantity</th>
+    <th>Total</th>
+    </tr>
+    <?php
+            echo"<tr><td>Red Chilli</td>
+            <td>500</td>
+            <td>2</td>
+            <td>1000</td></tr>";
+    ?>
+    </table>
     </div>
-    </div></div>
-    <p class="text-danger">select cr.c_fname,c.c_id, p.p_id, p.p_name from product p inner JOIN cart c inner join client_registration cr ON p.p_id=c.p_id AND c.c_id=cr.c_id</p>
-    <div class="row"><div class="col-md-12">
+    </div>
     <button class="btn btn-primary" data-toggle="collapse" data-target="#datahide">Lern more</button>
-    <p class="collapse" id="datahide">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi ullam totam laudantium quibusdam quisquam atque, dolores nihil aperiam velit iste, animi, deserunt ipsum excepturi ad consequuntur ex? Eligendi, pariatur quisquam cum incidunt harum tempore, cumque laborum repudiandae explicabo libero possimus! Dignissimos ipsum aliquam adipisci iure nemo vero a reprehenderit non alias, eaque iste esse magni ipsa commodi necessitatibus eum nihil aperiam quibusdam labore eius sint quis, voluptatem sapiente? Quisquam quo, inventore, ut quidem nisi officiis nihil saepe excepturi explicabo blanditiis facere necessitatibus. Quasi deserunt ratione temporibus laudantium earum? Velit libero officiis dolore quam modi necessitatibus commodi est esse neque provident eum repellendus unde sit itaque quidem, perspiciatis magni? Veniam vel adipisci sit aut ab a voluptate autem, dolore doloremque quibusdam! Numquam hic minus rerum officia, libero autem quia maxime beatae amet sed pariatur dignissimos quibusdam quo velit debitis! Ipsam veniam et rem quidem neque, reiciendis dicta nostrum error ratione, voluptas nam, sint vel eaque provident inventore aspernatur. Ullam nemo delectus deleniti beatae tenetur maxime deserunt vero ex suscipit natus debitis est consectetur quisquam, pariatur earum totam? Autem odio dolorem facilis totam magni, recusandae perspiciatis quibusdam et, blanditiis labore consectetur nostrum voluptatum adipisci soluta rerum est consequatur velit enim dolores fugit repellat non ex pariatur nulla! Dolore nesciunt, debitis quod explicabo provident, id harum accusamus, voluptas culpa aliquam optio. Rerum, aperiam illo. Repellendus sint nulla, id, aliquid natus molestias tempore autem aperiam nisi, esse dicta commodi asperiores. Obcaecati, officiis similique. Quidem voluptatum fuga cupiditate magni ab optio officiis dicta voluptatibus voluptate praesentium hic velit commodi similique nihil exercitationem ipsum explicabo est sapiente neque odio, sunt esse ducimus tempora corporis! Rem labore molestias quas atque commodi ducimus, rerum, temporibus voluptatibus eaque nam quod quae, debitis omnis fugit hic blanditiis esse illo fuga ullam numquam. Officiis aliquam saepe doloribus, placeat veniam, sequi, ipsam fugit libero officia voluptas laudantium id magnam porro inventore enim. Incidunt fuga iste veniam aliquid veritatis recusandae harum vero aut quia tempora repellendus doloremque blanditiis unde rerum voluptatem ut, magnam, possimus rem, repudiandae velit! Sapiente cum laboriosam doloribus deserunt, nostrum aliquam. Delectus dolorem sint ullam dolore est laboriosam minus aliquam, numquam suscipit repellendus tempora expedita ad ipsam voluptatibus. Nemo temporibus dicta illo aliquam quod, facere, iure, nisi ipsam error nulla alias mollitia! Quidem adipisci veritatis assumenda numquam repellendus maiores ad commodi et, quibusdam iusto illum fugiat culpa ipsam accusantium? Magni, placeat quos, laborum quae nulla commodi facere nihil, deleniti labore repudiandae harum voluptas necessitatibus! Consequuntur blanditiis quas exercitationem iure quis. At sequi velit sit dolorem optio eveniet ullam consequuntur doloribus sint dolorum minima inventore quibusdam, dolores unde dignissimos quisquam! Numquam maxime quidem odit molestias ipsa quo pariatur dolor sapiente, veritatis exercitationem, vel nam dolorum ipsum. Dignissimos fugit odio saepe expedita alias veniam magnam cupiditate ullam non nostrum, repellat eligendi soluta maiores obcaecati! Tenetur libero temporibus quam, ipsum earum repellendus ut eius suscipit, possimus corrupti est qui vitae inventore. Similique qui error perspiciatis hic! Porro deleniti, dicta, illo unde vel quam exercitationem corrupti, magnam ipsam dolorum vitae similique impedit perspiciatis voluptatibus?</p>
+    <div class="row">
+    <div class="col-md-12">
+    <p class="collapse" id="datahide">After Add to cart --> set Product quantity--->click to order for confirm order -->Select Payment method and Checkout</p>
     </div></div>
     </div>
     <?php
@@ -118,7 +132,7 @@
                 $('#message').html(data);
                 setTimeout(() => {
                     document.location.reload();
-                }, 1200);
+                }, 2000);
             }
         })
     })

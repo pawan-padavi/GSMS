@@ -19,6 +19,7 @@ if($result)
 }
 else
 {
+    unset($_SESSION['shoping-cart'][$p_id]);
     echo '<div class="alert alert-danger alert-dismissible">Already Orderd<button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times</span></button></div>';
 }
 
