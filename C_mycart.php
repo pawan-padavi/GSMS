@@ -29,10 +29,23 @@
    {
        width:50px;
    }
-   /* .cnt div
+  #payment_methods li
    {
-        display:inline-flex;
-   } */
+        display:flex;
+   }
+   #payment_methods li
+   {
+       background-color:gold;
+       padding:10px;
+       /* border:2px solid black; */
+       margin:5px 0px 0px 5px;
+       color:indigo;
+       border-radius:5px;
+   }
+   .ms
+   {
+       color:tomato;
+   }
    </style>
 </head>
 <body>
@@ -116,9 +129,21 @@
     <td><b>
     <?php echo $total;?>
     </b></td></tr>
-    </table>
-    </div>
-    </div>
+    <tr><td colspan="2"></td>
+    <td><b> <button type="button" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success">Make Payment</button> </b></td>
+    <td></td></tr>
+    <tr><td colspan="2"></td>
+    <td><div id="payment_methods">
+    <ul id="view_pay_method" class="collapse">
+    <span class="ms">Some Payment method not working</span>
+        <li><span><input type="radio" name="" id=""disabled></span>&nbsp;Debit Cart</li>
+        <li><span><input type="radio" name="" id=""disabled></span>&nbsp;Credit Cart</li>
+        <li><span><input type="radio" name="" id="" disabled></span>&nbsp;Online Banking</li>
+        <li><span><input type="radio" name="" id=""></span>&nbsp;Cash on Delivery</li>
+    </ul></div>
+    </td>
+    <td></td></tr>
+    </table></div></div>
     <button class="btn btn-primary" data-toggle="collapse" data-target="#datahide">Lern more</button>
     <div class="row">
     <div class="col-md-12">
