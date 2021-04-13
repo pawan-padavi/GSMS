@@ -40,7 +40,8 @@
         include('C_header.php');
     ?>
     
-    <div class="container cnt">
+    <div class="container">
+    <div class="row"><col><div id="message"></div></div>
     <div class="row">
         <?php
     //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
@@ -92,11 +93,29 @@
     <th>Total</th>
     </tr>
     <?php
-            echo"<tr><td>Red Chilli</td>
-            <td>500</td>
-            <td>2</td>
-            <td>1000</td></tr>";
+    $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db");
+    $query = "SELECT * from cart";
+    $result = mysqli_query($connection,$query);
+    if(mysqli_num_rows($result)>0)
+    {
+        while($row = mysqli_fetch_assoc($result))
+        {
     ?>
+            <tr><td><?php echo $row["p_name"];?></td>
+            <td><?php echo $row["p_price"];?></td>
+            <td><?php echo $row["p_quantity"];?></td>
+            <td><?php echo $row["total"];?></td></tr>
+            
+    <?php
+        $total = $total + $row["total"];
+    }
+    }
+    ?>
+    <tr><td colspan="2"></td>
+    <td><b>Grand Total</b></td>
+    <td><b>
+    <?php echo $total;?>
+    </b></td></tr>
     </table>
     </div>
     </div>
@@ -130,6 +149,7 @@
             success:function(data)
             {
                 $('#message').html(data);
+                $('#message').addClass('mt mb-5');
                 setTimeout(() => {
                     document.location.reload();
                 }, 2000);
