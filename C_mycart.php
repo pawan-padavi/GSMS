@@ -135,7 +135,7 @@
     <?php echo $total;?>
     </b></td></tr>
     <tr><td colspan="2"></td>
-    <td><b> <button type="button" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success">Make Payment</button> </b></td>
+    <td><b> <button type="button" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success"><span class="far fa-credit-card"></span>&nbsp;&nbsp;&nbsp;Make Payment</button> </b></td>
     <td></td></tr>
     <tr><td></td>
     <td colspan="2"><div id="payment_methods">

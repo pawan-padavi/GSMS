@@ -80,7 +80,7 @@ else
     
     <!-- <span id="dp"><ul class="list-unstyled"><li>Logout</li></ul></span> -->
     </nav>
-    <div class=" bg-warning clps"><span class="btn text-left text-light" data-toggle="collapse" data-target="#hidenav"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center text-light"><b>GSMS</b></span><span style="margin-left:70%"><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></span>
+    <div class="alert-warning clps"><span class="btn text-left text-dark" data-toggle="collapse" data-target="#hidenav"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center"><b>GSMS</b></span><span style="margin-left:70%"><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></span>
     <!-- fetch user profile photo -->
     
     </div>
