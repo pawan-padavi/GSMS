@@ -17,7 +17,7 @@
             <img class='' height='70' src='Assets/upload-images/{$row["p_img"]}'></center>
             <center><small>{$row["p_name"]}&nbsp;{$row["p_qnt"]}<sub>{$row["p_measure"]}</sub></small></center>
             <div class='text-center'><div class='badge badge-danger'><del>$price</del></div>
-            <div class='badge badge-success'><stong>{$row["p_price"]}&nbsp;{$row["c_format"]}</strong></div>&nbsp;<div class='badge badge-warning text-light'>$star<i class='fa fa-star'></i></div>
+            <div class='badge badge-success'><stong>{$row["p_price"]}&nbsp;<span class='fas fa-rupee-sign'></span></strong></div>&nbsp;<div class='badge badge-warning text-light'>$star<i class='fa fa-star'></i></div>
             <div id='cart-nd-qunt'>
             <div><button data-id='{$row["p_id"]}' class='btn Add-cart btn-info'><strong>Add To Cart<i class='fas fa-shopping-cart fa-1x'></i> </strong></button></div>
             </div></div>

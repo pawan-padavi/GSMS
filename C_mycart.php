@@ -35,12 +35,16 @@
    }
    #payment_methods li
    {
-       background-color:gold;
+       /* background-color:whitesmoke; */
        padding:10px;
-       /* border:2px solid black; */
-       margin:5px 0px 0px 5px;
+       border:2px solid indigo;
+       margin:5px;
        color:indigo;
        border-radius:5px;
+   }
+   #payment_methods li:last-child
+   {
+       border:0px solid white;
    }
    .ms
    {
@@ -106,8 +110,9 @@
     <th>Total</th>
     </tr>
     <?php
+    $cid =$_SESSION["c_id"];
     $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db");
-    $query = "SELECT * from cart";
+    $query = "SELECT * from cart where c_id=$cid";
     $result = mysqli_query($connection,$query);
     if(mysqli_num_rows($result)>0)
     {
@@ -126,20 +131,21 @@
     ?>
     <tr><td colspan="2"></td>
     <td><b>Grand Total</b></td>
-    <td><b>
+    <td><b><span class="fas fa-rupee-sign"></span>
     <?php echo $total;?>
     </b></td></tr>
     <tr><td colspan="2"></td>
     <td><b> <button type="button" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success">Make Payment</button> </b></td>
     <td></td></tr>
-    <tr><td colspan="2"></td>
-    <td><div id="payment_methods">
+    <tr><td></td>
+    <td colspan="2"><div id="payment_methods">
     <ul id="view_pay_method" class="collapse">
     <span class="ms">Some Payment method not working</span>
         <li><span><input type="radio" name="" id=""disabled></span>&nbsp;Debit Cart</li>
         <li><span><input type="radio" name="" id=""disabled></span>&nbsp;Credit Cart</li>
         <li><span><input type="radio" name="" id="" disabled></span>&nbsp;Online Banking</li>
         <li><span><input type="radio" name="" id=""></span>&nbsp;Cash on Delivery</li>
+        <li><button type="submit" class="btn btn-info ordplace w-100">Place Order</button></li>
     </ul></div>
     </td>
     <td></td></tr>
