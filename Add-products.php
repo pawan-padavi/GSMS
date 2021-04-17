@@ -23,12 +23,12 @@ date_default_timezone_set('Asia/Kolkata');
 </head>
 <body>
     <?php
-        include('header.php');
+        // include('header.php');
     ?>
     <div class="container"><div class="row"><div class="mt-5 col-md-12 col-lg-12 col-sm-12">
-    <center>
+    <center><small>
     <form id="product-data" enctype="multipart/form-data" class="form-group">
-    <table class="table table-hover table-bordered mt-2 w-100">
+    <table class="table table-hover table-md mt-2 ">
         <thead class="thead-dark">
         <tr scope="row"><th scope="col" colspan="4" class="text-center w">Add Product Detail</th></tr>
         </thead>
@@ -43,7 +43,7 @@ date_default_timezone_set('Asia/Kolkata');
 
                 <th scope="col" class="text-left">Product Sub Category</th><th scope="col"><div id="sub-category"></div></th></tr>
 
-                <tr scope="row"><th scope="col" class="text-left">Currency Format</th><th scope="col"><input type="hidden" name="c_format" id="c_format" value="&#8377" class="form-control w-50">&#8377</div></th>
+                <tr scope="row"><th scope="col" class="text-left">Currency Format</th><th scope="col"><input type="hidden" name="c_format" id="c_format" value="&#8377" class="form-control w-50"><i class="fa fa-rupee-sign"></i></div></th>
                 <th scope="col" class="text-left">Product Price</th><th scope="col"><input type="number" name="p_price" id="p_price" class="form-control w-100" required></th></tr>
 
                 <tr scope="row"><th scope="col" class="text-left">Serching Keyword</th><th scope="col"><input type="text" name="p_search" id="p_search" class="form-control w-100" required></th>
@@ -52,12 +52,12 @@ date_default_timezone_set('Asia/Kolkata');
         </form>    
         <tr scope="row"><th scope="col" colspan="4"><center><a href="products.php"><button type="button" class="btn btn-info" name="p_view" id="p_view">View Product Detail</button></a></center></th></tr>
         </tbody>
-    </table>
+    </table></small>
     <div id="message"></div>
     </center>
     </div></div></div>
     <?php
-        include('footer.php');
+        // include('footer.php');
     ?>
 
     <script src="Assets/js/jquery.js"></script>

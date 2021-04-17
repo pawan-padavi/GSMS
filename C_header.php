@@ -123,7 +123,7 @@
         <a href="c_logout.php" class="nav-link"><button class="btn btn-danger btn-lot">Logout</button></a>
     </nav>
     </div></div>
-    <div class="bg-success"><span class="btn text-left text-light" data-toggle="collapse" data-target="#navbarHide"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center text-light"><b>GSMS</b></span><span class="mt-1 pos"><sup>
+    <div class="alert-warning"><span class="btn text-left text-dark" data-toggle="collapse" data-target="#navbarHide"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center"><b>GSMS</b></span><span class="mt-1 pos"><sup>
     <div class="badge badge-pill badge-warning"><b id="cart">
     <?php $count = count($_SESSION["shoping-cart"]); 
         echo $count;

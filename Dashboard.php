@@ -6,13 +6,47 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Assets/css/bootstrap.css">
+    <style>
+    #content div
+    {
+        display:inline-flex;
+        padding:10px;
+    }
+    #right li
+    {
+        display:flex;
+        background-color:pink;
+        padding:20px;
+        margin:10px;
+        align: left 0px;
+        width:200px;
+    }
+    
+    
+    
+    </style>
 </head>
 <body>
 <?php
 include('header.php');
 ?>
-<div class="container"><div class="row"><div class="mt-5 col-md-12 col-lg-12 col-sm-12 mb-5">
-<canvas id="myChart" width="400" height="400"></canvas>
+<div class="container-fluid"><div class="row"><div class="mt-5 col-md-12 col-lg-12 col-sm-6 mb-5">
+<div id="content">
+<div id="right">
+<ul>
+<li><button id="add-product" class="btn btn-success w-100">Add Products</button></li>
+<li>Update Products</li>
+<li>Add Discount</li>
+<li>Setting</li>
+<li>Remain Products</li>
+<li>About Company</li>
+</ul>
+</div>
+<div id="mainContent">
+
+</div>
+</div>
+<!-- <canvas id="myChart" width="400" height="400"></canvas> -->
 </div></div></div>
 <?php
 include('footer.php');
@@ -21,7 +55,33 @@ include('footer.php');
 <script src="Assets/js/jquery.js"></script>
 //<script src="Assets/js/bootstrap.js"></script>
 <script src="Assets/js/all.js"></script>
-<script src="CHeader.js"></script>
+<script>
+$(document).ready(function(){
+viewdata();
+function viewdata()
+{
+    $.ajax({
+            url:"view-product.php",
+            type:"POST",
+            success:function(data)
+            {
+                $('#mainContent').html(data);
+            }
+        });
+}
+$('#add-product').on("click",function(){
+    $.ajax({
+            url:"add-products.php",
+            type:"POST",
+            success:function(data)
+            {
+                $('#mainContent').html(data);
+            }
+        });
+})
+});
+</script>
+<!-- <script src="CHeader.js"></script>
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var num1 =20;
@@ -63,6 +123,6 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-</script>
+</script> -->
 </body>
 </html>
