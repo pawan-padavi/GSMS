@@ -13,7 +13,7 @@
     </style>
 </head>
 <body><small>
-    <div class="overflow-scroll container-fluid"><div class="row"><div class=" mt-5 col-md-12 col-lg-12 col-sm-12">
+    <div class="overflow-scroll"><div class="row"><div class=" mt-5 col-md-12 col-lg-12 col-sm-12">
     <center><table class="table table-warning table-borderless table-sm">
     <thead class=""><tr><th><i class="fa fa-users"></i> About</th><th><i class="fa fa-question"></i> Help</th><th><i class="fa fa-archway"></i>Policy</th><th><i class="fa fa-compass"></i> Social</th><th><i class="fa fa-envelope"></i> Mail us</th><th><i class="fa fa-certificate"></i> Registered office address</th></tr></thead>
     <!-- <tr><th colspan="7"><hr class="horizontal"></th></tr> -->

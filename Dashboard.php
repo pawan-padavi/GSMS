@@ -20,10 +20,7 @@
         margin:10px;
         align: left 0px;
         width:200px;
-    }
-    
-    
-    
+    }  
     </style>
 </head>
 <body>
@@ -53,7 +50,7 @@ include('footer.php');
 ?>
 <script src="Assets/js/chart.js"></script>
 <script src="Assets/js/jquery.js"></script>
-//<script src="Assets/js/bootstrap.js"></script>
+<script src="Assets/js/bootstrap.js"></script>
 <script src="Assets/js/all.js"></script>
 <script>
 $(document).ready(function(){
