@@ -63,6 +63,7 @@ date_default_timezone_set('Asia/Kolkata');
           //insert data to product-quantity
           $(document).on("click",".add-prod-qnt",function(e){
             e.preventDefault();
+            
             // var formData = new FormData(this);
             var p_qnt_id = $('#p_qnt_id').val();
             var p_id = $('#p_id').val();
