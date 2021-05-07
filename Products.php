@@ -85,11 +85,9 @@
                     }
                     else
                     {
-                        $('#message').html("If you want to delete This product firstly delete Product Quntity Record");
-                        $('#message').addClass('alert bg-light mt-2 text-center text-danger');
                         $('#message').css('font-size','120%');
-                        $('#delete').html('Click Here to Delete Product Quntity Record');
-                        $('#delete').addClass('btn btn-danger');
+                        $('#delete').html('DELETE PRODUCT QUANTITY');
+                        $('#delete').addClass('btn btn-danger mt-2 mb-2');
                         // alert("Do yo want to delete this product firstly delete quantity");
                     }
                 }

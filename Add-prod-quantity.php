@@ -33,7 +33,7 @@ date_default_timezone_set('Asia/Kolkata');
             <option value="&#x2113">&#x2113</option>
             <option value="mtr">mtr</option>
         </select></td></tr>
-        <tr scope="row"><th scope="col">Stock</th><td scope="col"><input type="number" name="p_stock" id="p_stock" class="form-control w-100"required></td></tr>
+        <tr scope="row"><th scope="col">Stock</th><td scope="col"><input type="number" name="p_stock" id="p_stock" class="form-control w-100" required></td></tr>
         <tr scope="row"><th scope="col" colspan="2" class="text-center"><button type="submit" name="add_prod_qty" id="add_prod_qty" class="btn btn-success add-prod-qnt"><span><i class="fas fa-plus"></i></span>&nbsp;Add</button></th></tr>
         </form>
         <tr><th colspan="2" class='text-center'><a href="products.php"><button class="btn btn-info">Go to Products Page</button></a></th><tr>

@@ -25,11 +25,13 @@ if($_SESSION["c_id"]!="")
             while($row = mysqli_fetch_assoc($result))
             {
         //This statement use to add cart
-      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
+       $c = $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
       "p_img"=>$row["p_img"],"p_name"=>$row["p_name"],"p_qnt"=>$row["p_qnt"],"p_measure"=>$row["p_measure"],"p_price"=>$row["p_price"],
       "c_format"=>$row["c_format"]);
+      setcookie('cartProduct',$c,time()+84400*30);
       //ends of Add to cart                                   
-  }
+          }
+          
 }
 } 
       

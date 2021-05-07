@@ -115,7 +115,7 @@
         echo $count;
      ?></b></div></sup><a href="c_mycart.php" class="mt-2 shopping"><i class="fa fa-shopping-cart fa-1x text-warning"></i></a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="userinfo"><a href="C_myaccount.php"><?php echo " Hi '".$c_fname." ".$c_lname."'"; ?></a></div></div></div>
 
-<div class="container-fluid"><div class="row"><div class="col-md-12 col-lg-12 col-sm-4">
+<div class="container-fluid hhd"><div class="row"><div class="col-md-12 col-lg-12 col-sm-4">
 <div class="pos-f-t">
   <div class="collapse" id="navbarHide">
     <nav class="navbar navbar-expand-lg navbar-info">
@@ -138,5 +138,8 @@
     <!-- <script src="Assets/js/jquery.js"></script>
     <script src="Assets/js/all.js"></script>
     <script src="Assets/js/bootstrap.js"></script> -->
+    $(document).click(function(){
+                $('.nvabar').hide();
+            })
 </body>
 </html>

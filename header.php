@@ -50,10 +50,6 @@ else
             z-index:1;
             margin-bottom:auto;
         }
-        .clps
-        {
-            position:;
-        }
         .navbar li
         {
             display:inline-flex;
@@ -63,7 +59,7 @@ else
 </head>
 <body>
 <div class="head container-fluid alert-info">
-<div class="clps"><span class="btn text-left text-dark" data-toggle="collapse" data-target="#hidenav"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center"><i class="fa fa-shopping-cart"></i>GSMS.com</span><span style="margin-left:70%"><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></span></div>
+<div><span class="btn text-left text-dark" data-toggle="collapse" data-target="#hidenav"><i id="menuhide" class="fas fa-list fa-2x"></i></span><span class="text-center"><i class="fa fa-shopping-cart"></i>GSMS.com</span><span style="margin-left:70%"><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></span></div>
 <div class="container-fluid"><div class="row"><div class="col-md-12 col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-info collapse" id="hidenav">
     <ul class="navbar-nav">

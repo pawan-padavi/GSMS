@@ -17,6 +17,10 @@
         display:block;
         padding:5px;
     }
+    #message
+    {
+        position:relative;
+    }
     </style>
 </head>
 <body>
@@ -36,10 +40,10 @@
     </div>    
     </div></div>
     <div id="message"></div>
+   
     <div id="show-Products"></div>
     
 </div>
-    
     <?php
         include('footer.php');
     ?>
