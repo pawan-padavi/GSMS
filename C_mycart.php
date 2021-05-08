@@ -58,7 +58,7 @@
     ?>
     
     <div class="container">
-    <div class="row"><col><div id="message"></div></div>
+    <div class="row"><div class="col-md-12"><div id="message"></div></div></div>
     <div class="row">
         <?php
     //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
@@ -71,7 +71,7 @@
         // print_r($cart);
         // echo"</pre>";
             $output="";
-                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt">
+                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt-3">
                  <table class="table">
                  <tr><th scope="col" colspan="6">CART ITEMS DETAIL</th></tr>
                  <tr scope="row">
@@ -100,7 +100,7 @@
                 }
             echo $output.="</table></div>";    
         ?>
-    <div class="col-md-6 col-lg-6 col-sm-12 mt">
+    <div class="col-md-6 col-lg-6 col-sm-12 mt-3">
     <table class="table">
     <tr><th colspan="4">ORDER DETAILS</th></tr>
     <tr>
@@ -108,6 +108,7 @@
     <th>Price</th>
     <th>quantity</th>
     <th>Total</th>
+    <th>#</th>
     </tr>
     <?php
     $cid =$_SESSION["c_id"];
@@ -119,10 +120,12 @@
         while($row = mysqli_fetch_assoc($result))
         {
     ?>
-            <tr><td><?php echo $row["p_name"];?></td>
+            <tr><td><input type="hidden" name="cid" id="cid"  value='<?php echo $row["c_id"];?>'/>
+            <?php echo $row["p_name"];?><input type="hidden" name="p_name" id="p_name" value='<?php echo $row["p_name"];?>'></td>
             <td><?php echo $row["p_price"];?></td>
             <td><?php echo $row["p_quantity"];?></td>
-            <td><?php echo $row["total"];?></td></tr>
+            <td><?php echo $row["total"];?></td>
+            <td><button data-id='<?php echo $row["p_name"];?>' class="btn text-danger delete-item"><i class="fa fa-trash"></i></button></td></tr>
             
     <?php
         $total = $total + $row["total"];
@@ -130,21 +133,21 @@
     }
     ?>
     <tr><td colspan="2"></td>
-    <td><b>Grand Total</b></td>
+    <td><b>Grand</b></td>
     <td><b><span class="fas fa-rupee-sign"></span>
     <?php echo $total;?>
     </b></td></tr>
     <tr><td colspan="2"></td>
-    <td><b> <button type="button" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success"><span class="far fa-credit-card"></span>&nbsp;&nbsp;&nbsp;Make Payment</button> </b></td>
+    <td><b> <button type="button" id="paymethod" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success"><span class="far fa-credit-card"></span>&nbsp;Pay</button> </b></td>
     <td></td></tr>
     <tr><td></td>
-    <td colspan="2"><div id="payment_methods">
+    <td colspan="3"><div id="payment_methods">
     <ul id="view_pay_method" class="collapse">
-    <span class="ms">Some Payment method not working</span>
-        <li><span><input type="radio" name="" id=""disabled></span>&nbsp;Debit Cart</li>
-        <li><span><input type="radio" name="" id=""disabled></span>&nbsp;Credit Cart</li>
-        <li><span><input type="radio" name="" id="" disabled></span>&nbsp;Online Banking</li>
-        <li><span><input type="radio" name="" id=""></span>&nbsp;Cash on Delivery</li>
+    <span class="ms">online payment gateway under working</span>
+        <li><span><input type="radio" name="paymentmethod" id=""disabled group></span>&nbsp;Debit Cart</li>
+        <li><span><input type="radio" name="paymentmethod" id=""disabled></span>&nbsp;Credit Cart</li>
+        <li><span><input type="radio" name="paymentmethod" id="" disabled></span>&nbsp;Online Banking</li>
+        <li><span><input type="radio" name="paymentmethod" id="" value="cash_on_delivery" checked></span>&nbsp;Cash on Delivery</li>
         <li><button type="submit" class="btn btn-info ordplace w-100">Place Order</button></li>
     </ul></div>
     </td>
@@ -211,7 +214,28 @@
         })
     // script ended for delete product from cart
     //script starts for price calculation
+    $(document).on("click",".delete-item",function(){
+        var item = $(this).data('id');
+        var cid = $('#cid').val();
+        if(confirm("Do you want to delete ?"))
+        {
+            $.ajax({
+                url:"delete-cart-items.php",
+                type:"POST",
+                data:{item:item,cid:cid},
+                success:function(data)
+                {
+                    $('#message').html("Data Deleted Successfully");
+                    $('#message').addClass('mt-5 alert alert-info');
+                    setTimeout(() => {
+                        document.location.reload();
+                    }, 600);
+                }
+            });
+        }
+    })
     });
      </script>
+
 </body>
 </html>
