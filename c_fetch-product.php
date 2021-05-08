@@ -12,7 +12,7 @@
             $star = rand(3,5);
             $price += $row["p_price"];
              $output.= "<div class='col-md-3 col-lg-3 col-sm-12 mb-3'>
-             <div class='card border border-light'>
+             <div class='card border border-light sd'>
             <div class='card-body'><center>
             <img height='100px' src='Assets/upload-images/{$row["p_img"]}'></center>
             <center><small>{$row["p_name"]}&nbsp;{$row["p_qnt"]}<sub>{$row["p_measure"]}</sub></small></center>

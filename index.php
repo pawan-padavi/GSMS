@@ -21,6 +21,14 @@
     {
         position:relative;
     }
+    .sd
+    {
+        box-shadow:10px 2px 20px 0px black;
+    }
+    .sd:hover
+    {
+        box-shadow:0px 5px 20px 0px green;
+    }
     </style>
 </head>
 <body>
@@ -29,14 +37,14 @@
     ?>
     <div class="container"><div class="row"><div class="mt-5 col-md-12">
     <div class="owl-carousel owl-theme mt-2">
-    <div class="item bg-danger"><img src="Assets/images/1.jpg" class="img-fluid" alt="Image not supported"></div>
-    <div class="item bg-warning"><img src="Assets/images/2.jpg" class="img-fluid" alt="Image not supported"></div>
-    <div class="item bg-dark"><img src="Assets/images/8.jpg" class="img-fluid" alt="Image not supported"></div>
-    <div class="item bg-light"><img src="Assets/images/3.jpg" class="img-fluid" alt="Image not supported"></div>
-    <div class="item bg-success"><img src="Assets/images/6.jpg" class="img-fluid" alt="Image not supported"></div>
-    <div class="item bg-warning"><img src="Assets/images/5.jpg" class="img-fluid" alt="Image not supported"></div>
-    <div class="item bg-danger"><img src="Assets/images/7.jpg" class="img-fluid" alt="Image not supported"></div>    
-    <div class="item bg-dark"><img src="Assets/images/4.jpg" class="img-fluid" alt="Image not supported"></div>
+    <div class="item bg-danger "><img src="Assets/images/1.jpg" class="img-fluid" alt="Image not supported"></div>
+    <div class="item bg-warning "><img src="Assets/images/2.jpg" class="img-fluid" alt="Image not supported"></div>
+    <div class="item bg-dark "><img src="Assets/images/8.jpg" class="img-fluid" alt="Image not supported"></div>
+    <div class="item bg-light "><img src="Assets/images/3.jpg" class="img-fluid" alt="Image not supported"></div>
+    <div class="item bg-success "><img src="Assets/images/6.jpg" class="img-fluid" alt="Image not supported"></div>
+    <div class="item bg-warning "><img src="Assets/images/5.jpg" class="img-fluid" alt="Image not supported"></div>
+    <div class="item bg-danger "><img src="Assets/images/7.jpg" class="img-fluid" alt="Image not supported"></div>    
+    <div class="item bg-dark "><img src="Assets/images/4.jpg" class="img-fluid" alt="Image not supported"></div>
     </div>    
     </div></div>
     <div id="message"></div>
@@ -111,6 +119,9 @@
                 {
 
                         $('#message').html(data); 
+                        setTimeout(() => {
+                            document.location.reload();
+                        }, 600);
 
                 }
                  })

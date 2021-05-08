@@ -19,9 +19,19 @@ error_reporting(0);
         <tr>
         <th class="bg-info"></th><td class="bg-info"></td><td colspan="2" align ="center" class="alert alert-success" valign="middle">
         <?php
+                $c_id = $_SESSION["c_id"];
                 $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db") or die("Database not connected");
-                $query = "select ";
+                $query = "select c_profilepic from client_registration where c_id =$c_id";
+                $result = mysqli_query($connection,$query) or die("query not executed properly");
+                if(mysqli_num_rows($result)>0)
+                {
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                        echo"<img src='{$row["c_profilepic"]}' alt='' />";
+                    }
+                }
         ?>
+        <button class="btn btn-info"><i class="fas fa-edit"></i></button>
         </td><th class="bg-info"></th><th class="bg-info"></th>
         </tr>
         <tr>

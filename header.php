@@ -49,11 +49,21 @@ else
             position:fixed;
             z-index:1;
             margin-bottom:auto;
+            border:0px solid black;
+       box-sizing:border-box;
+       box-shadow:0px 10px 10px 0px black;
         }
         .navbar li
         {
             display:inline-flex;
             
+        }
+        .table
+        {
+       border:1px solid black;
+       box-sizing:border-box;
+       box-shadow:0px 2px 10px 0px black;
+
         }
     </style>
 </head>

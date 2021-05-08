@@ -15,12 +15,12 @@ if($result)
 {
      unset($_SESSION['shoping-cart'][$p_id]);
     
-    echo'<div class="alert alert-success alert-dismissible">Order Confirmed<button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times</span></button></div>';
+    echo'<div class="alert alert-success alert-dismissible">Product confirm to order<button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times</span></button></div>';
 }
 else
 {
      unset($_SESSION['shoping-cart'][$p_id]);
-    echo '<div class="alert alert-danger alert-dismissible">Already Orderd<button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times</span></button></div>';
+    echo '<div class="alert alert-danger alert-dismissible">ohh sorry some prblems arise....<button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times</span></button></div>';
 }
 
 ?>

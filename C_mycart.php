@@ -19,7 +19,7 @@
        height:80px;
        width:75px;
        border:5px solid white;
-   }
+   }   
    .pd
    {
        text-align:center;
@@ -71,9 +71,9 @@
         // print_r($cart);
         // echo"</pre>";
             $output="";
-                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt-3">
-                 <table class="table">
-                 <tr><th scope="col" colspan="6">CART ITEMS DETAIL</th></tr>
+                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt-5">
+                 <small><table class="table table-borderless">
+                 <tr><th style="border-bottom:1px solid black;" scope="col" colspan="6">PRODUCT CONFIRMATION TABLE</th></tr>
                  <tr scope="row">
                  <th scope="col">Image</th>
                 <th scope="col">Name</th>
@@ -94,22 +94,16 @@
                     <td scope='col' class='pd'><input type='hidden' class='iprice' name ='iprice' id='iprice' value='{$c["p_price"]}'/>{$c["p_price"]}{$c["c_format"]}</td>
                     <td scope='col' class='pd'><input data-id='{$c["p_id"]}' class='iquantity' name='iquantity' id='iquantity' type='number' value='1' min='1' max='10' /></td>
                     <td scope='col' class='pd'><button type='button' class='btn btn-primary del-cart' data-id='{$c["p_id"]}'><span><i class='fa fa-trash'></i></span></button></td>
-                    <td scope='col' class='pd'><button type='submit' class='btn btn-info add-to-order' data-id='{$c["p_id"]}'>Confirm</button></td>
+                    <td scope='col' class='pd'><button type='submit' class='btn btn-info add-to-order' data-id='{$c["p_id"]}'><i class='fas fa-thumbs-up'></i></button></td>
                     </tr></form></tbody>";
                     }
                 }
-            echo $output.="</table></div>";    
+            echo $output.="</table></small></div>";    
         ?>
-    <div class="col-md-6 col-lg-6 col-sm-12 mt-3">
-    <table class="table">
-    <tr><th colspan="4">ORDER DETAILS</th></tr>
-    <tr>
-    <th>Product</th>
-    <th>Price</th>
-    <th>quantity</th>
-    <th>Total</th>
-    <th>#</th>
-    </tr>
+    <div class="col-md-6 col-lg-6 col-sm-12 mt-5">
+    <small><table class="table table-borderless">
+    <tr><th style="border-bottom:1px solid black;" colspan="5">ORDER DETAILS</th></tr>
+    <tr><th>Product</th> <th>Price</th><th>quantity</th><th>Total</th><th>#</th> </tr>
     <?php
     $cid =$_SESSION["c_id"];
     $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db");
@@ -132,14 +126,14 @@
     }
     }
     ?>
-    <tr><td colspan="2"></td>
-    <td><b>Grand</b></td>
-    <td><b><span class="fas fa-rupee-sign"></span>
+    <tr><td colspan="3"><b>Grand Total</b></td>
+    <td colspan="2">
+    <b><span class="fas fa-rupee-sign"></span>
     <?php echo $total;?>
     </b></td></tr>
     <tr><td colspan="2"></td>
-    <td><b> <button type="button" id="paymethod" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success"><span class="far fa-credit-card"></span>&nbsp;Pay</button> </b></td>
-    <td></td></tr>
+    <td colspan="3"><b> <button type="button" id="paymethod" data-toggle="collapse" data-target="#view_pay_method" class="btn btn-success"><span class="far fa-credit-card"></span>&nbsp;Pay</button> </b></td>
+    </tr>
     <tr><td></td>
     <td colspan="3"><div id="payment_methods">
     <ul id="view_pay_method" class="collapse">
@@ -152,7 +146,7 @@
     </ul></div>
     </td>
     <td></td></tr>
-    </table></div></div>
+    </table></small></div></div>
     <button class="btn btn-primary" data-toggle="collapse" data-target="#datahide">Lern more</button>
     <div class="row">
     <div class="col-md-12">

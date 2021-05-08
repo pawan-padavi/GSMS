@@ -3,8 +3,8 @@
     $aid = $_SESSION["aid"];
     if($_SESSION["aid"]==$aid)
     {
-        session_unset();
-        // session_destroy();
+        unset($_SESSION["aid"]);
+        
         header('location:Admin-login.php'); 
     }
 ?>

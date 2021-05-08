@@ -1,16 +1,15 @@
 <?php
     session_start();
     $c_id = $_SESSION["c_id"];
-    print_r($_SESSION["c_id"]);
-    echo $_SESSION["c_usrname"];
-    echo $_SESSION["c_lname"];
-    echo $_SESSION["c_fname"];
+    // print_r($_SESSION["c_id"]);
+    // echo $_SESSION["c_usrname"];
+    // echo $_SESSION["c_lname"];
+    // echo $_SESSION["c_fname"];
     // $unset = session_unset("c_id,c_usrname,c_lname,c_fname");
     // $destroy = session_destroy("c_id,c_usrname,c_lname,c_fname");
     if(isset($_SESSION["c_id"]))
     {
-        session_unset();
-        session_destroy();
+        unset($_SESSION["c_id"]);
          header('location:c_login.php');
     }
 ?>

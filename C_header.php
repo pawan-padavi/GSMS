@@ -2,7 +2,7 @@
     session_start();
     error_reporting(0);
 
-    if($_SESSION["c_usrname"]!="")
+    if($_SESSION["c_id"]!="")
     {
         $username =$_SESSION["c_usrname"];
         $c_fname =$_SESSION["c_fname"];
@@ -34,6 +34,9 @@
             position:fixed;
             z-index:1;
             margin-bottom:auto;
+       border:0px solid black;
+       box-sizing:border-box;
+       box-shadow:0px 10px 10px 0px black;
         }
         .nav-link{
             font-weight:bold;
@@ -106,6 +109,11 @@
         {
             color:indigo;
         } */ 
+        table{
+       border:1px solid black;
+       box-sizing:border-box;
+       box-shadow:0px 2px 10px 0px black;
+   }
     </style>
 </head>
 <body><div class="head container-fluid alert-info">

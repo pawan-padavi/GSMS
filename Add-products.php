@@ -23,12 +23,12 @@ date_default_timezone_set('Asia/Kolkata');
 </head>
 <body>
     <?php
-        // include('header.php');
+         include('header.php');
     ?>
     <div class="container"><div class="row"><div class="mt-5 col-md-12 col-lg-12 col-sm-12">
     <center><small>
     <form id="product-data" enctype="multipart/form-data" class="form-group">
-    <table class="table table-hover table-md mt-2 ">
+    <table class="table table-hover table-md mt-5 ">
         <thead class="thead-dark">
         <tr scope="row"><th scope="col" colspan="4" class="text-center w">Add Product Detail</th></tr>
         </thead>
