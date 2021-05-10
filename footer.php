@@ -10,25 +10,66 @@
     a{
             color:black;
     }
+    .ft
+    {
+      /* background-image:linear-gradient(to right,pink,white); */
+    }
+   .tt:hover
+    {
+          font-size:25px;
+          color:red;
+          
+    }
     .footer
     {
-        border:0px solid black;
+        
        box-sizing:border-box;
-       box-shadow:0px 15px 20px 0px black;
+       box-shadow:0px 1px 2px 0px black;
+       /* background-image:linear-gradient(to left,pink,white); */
     }
+    .foooter
+    {
+          border:none;
+          background-color:tan;
+    }
+      .card li
+      {
+          list-style:none;
+          padding:10px;
+          font-weight:bolder;
+      }  
     </style>
 </head>
-<body><small>
-    <div class="overflow-scroll"><div class="row"><div class=" mt-5 col-md-12 col-lg-12 col-sm-12">
-    <center><table class="table table-warning table-borderless table-sm footer">
-    <thead class=""><tr><th><i class="fa fa-users"></i> About</th><th><i class="fa fa-question"></i> Help</th><th><i class="fa fa-archway"></i>Policy</th><th><i class="fa fa-compass"></i> Social</th><th><i class="fa fa-envelope"></i> Mail us</th><th><i class="fa fa-certificate"></i> Registered office address</th></tr></thead>
-    <!-- <tr><th colspan="7"><hr class="horizontal"></th></tr> -->
-    <tr><td><a href="#">Contact us</a></td><td><a href="#">Payments</a></td><td><a href="#">Return Policy</a></td><td><a href="#"class="text-info"><i class="fab fa-facebook fa-2x"></i></a></td><td>padavipawansing@gmail.com</td><td>Shirpur,Dhule,Maharashtra 425405</td></tr>
-    <tr><td><a href="#">About us</a></td><td><a href="#">Shipping</a></td><td><a href="#">Terms of Use</a></td><td><a href="#"class="text-primary"><i class="fab fa-twitter fa-2x"></i></a></td><td>pwnsngns@gmail.com</td><td>Lakdya Hanuaman, Shirpur, Dhule, Maharashtra 425405</td></tr>
-    <tr><td><a href="#">Press</a></td><td><a href="#">FAQ</a></td><td><a href="#">Security</a></td><td><a href="#" class="text-success"><i class="fab fa-whatsapp fa-2x"></i></a></td><td>Satpuda@gmail.com</td><td>Maharashtra->Dhule->Shirpur->Sule->Lakdya Hanuaman</td></tr>
-    </table></center>
-    </div></div></div>
-    <!-- <script src="Assets/js/all.js"></script>  -->
-    </small>
+<body>
+      
+      <div class="container-fluid">
+      <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="card border footer mt-2 mb-5" style="height:20em;"><div class="card-header"><i class="fa fa-users"></i> About</div><div class="card-body ft" ><ul>
+      <li><a href="#"> Contact Us</a></li><li><a href="#"> About Us</a></li><li><a href="#">Press</a></li></ul></div></div></div>
+<!--  -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="card border footer mt-2 mb-5" style="height:20em;"><div class="card-header"><i class="fa fa-question"></i> Help</div><div class="card-body ft"><ul>
+      <li><a href="#">Payments</a></li><li><a href="#">Shipping</a></li><li><a href="#">FAQ</a></li></ul></div></div></div>
+<!--  -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="card border footer mt-2 mb-5" style="height:20em;"><div class="card-header"><i class="fa fa-archway"></i>Policy</div><div class="card-body ft"><ul>
+      <li><a href="#">Return Policy</a></li><li><a href="#">Terms of Use</a></li><li><a href="#">Security</a></li></ul></div></div></div>
+<!--  -->
+      
+<!--  -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="card border footer mt-2 mb-5" style="height:20em;"><div class="card-header"><i class="fa fa-envelope"></i> Mail & <i class="fa fa-compass"></i> Social</div><div class="card-body ft">
+      <b><a href="#">padavipawansing@gmail.com</a><br><br><a href="#">pwnsngns@gmail.com</a><br><br><a href="#">Satpuda@gmail.com</a>
+      <br><hr />
+      <a href="#"class="text-info tt"><i class="fab fa-facebook fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#"class="text-primary tt"><i class="fab fa-twitter fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" class="text-success tt"><i class="fab fa-whatsapp fa-2x"></i></a>
+      </b></div></div></div>
+<!--  -->
+      
+<!--  -->
+      </div>
+      </div>
 </body>
 </html>

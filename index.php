@@ -29,6 +29,10 @@
     {
         box-shadow:0px 5px 20px 0px green;
     }
+    /* body{
+        background-image:linear-gradient(to top,orange,green);
+        /* opacity:1; */
+    } */
     </style>
 </head>
 <body>

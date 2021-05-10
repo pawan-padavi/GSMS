@@ -11,7 +11,7 @@
         {
             $star = rand(3,5);
             $price += $row["p_price"];
-             $output.= "<div class='col-md-3 col-lg-3 col-sm-12 mb-3'>
+             $output.= "<div class='col-md-6 col-lg-3 col-sm-12 mb-3'>
              <div class='card border border-light sd'>
             <div class='card-body'><center>
             <img height='100px' src='Assets/upload-images/{$row["p_img"]}'></center>

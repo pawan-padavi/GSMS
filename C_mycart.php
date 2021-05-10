@@ -71,7 +71,7 @@
         // print_r($cart);
         // echo"</pre>";
             $output="";
-                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt-5">
+                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt">
                  <small><table class="table table-borderless">
                  <tr><th style="border-bottom:1px solid black;" scope="col" colspan="6">PRODUCT CONFIRMATION TABLE</th></tr>
                  <tr scope="row">
@@ -100,7 +100,7 @@
                 }
             echo $output.="</table></small></div>";    
         ?>
-    <div class="col-md-6 col-lg-6 col-sm-12 mt-5">
+    <div class="col-md-6 col-lg-6 col-sm-12 mt">
     <small><table class="table table-borderless">
     <tr><th style="border-bottom:1px solid black;" colspan="5">ORDER DETAILS</th></tr>
     <tr><th>Product</th> <th>Price</th><th>quantity</th><th>Total</th><th>#</th> </tr>
