@@ -58,7 +58,7 @@
     ?>
     
     <div class="container">
-    <div class="row"><div class="col-md-12"><div id="message"></div></div></div>
+    <div class="row"><div class="col-md-12"><div id="message mb-2"></div></div></div>
     <div class="row">
         <?php
     //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
@@ -119,7 +119,7 @@
             <td><?php echo $row["p_price"];?></td>
             <td><?php echo $row["p_quantity"];?></td>
             <td><?php echo $row["total"];?></td>
-            <td><button data-id='<?php echo $row["p_name"];?>' class="btn text-danger delete-item"><i class="fa fa-trash"></i></button></td></tr>
+            <td><button data-id='<?php echo $row["p_name"];?>' data-qnt='<?php echo $row["p_quantity"];?>' class="btn text-danger delete-item"><i class="fa fa-trash"></i></button></td></tr>
             
     <?php
         $total = $total + $row["total"];
@@ -210,13 +210,14 @@
     //script starts for price calculation
     $(document).on("click",".delete-item",function(){
         var item = $(this).data('id');
+        var qnt = $(this).data('qnt');
         var cid = $('#cid').val();
         if(confirm("Do you want to delete ?"))
         {
             $.ajax({
                 url:"delete-cart-items.php",
                 type:"POST",
-                data:{item:item,cid:cid},
+                data:{item:item,cid:cid,qnt:qnt},
                 success:function(data)
                 {
                     $('#message').html("Data Deleted Successfully");

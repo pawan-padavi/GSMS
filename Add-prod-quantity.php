@@ -28,7 +28,7 @@ date_default_timezone_set('Asia/Kolkata');
         <tr scope="row"><th scope="col">Net Weight</th><td scope="col"><input class="form-control w-100" type="number" name="p_qnt" id="p_qnt" required placeholder="Enter product weight only"></td></tr>
         <tr scope="row"><th scope="col">Unit</th><td scope="col"><select class="form-control w-100" name="p_measure" id="p_measure" required>
             <option disabled selected>Select Measurement</option>
-            <option value="&#13199">&#13199</option>
+            <option value="&#13199"><b>&#13199</b></option>
             <option value="gm">gm</option>
             <option value="&#x2113">&#x2113</option>
             <option value="mtr">mtr</option>

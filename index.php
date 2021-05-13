@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="Assets/css/owl.carousel.css">
     <link rel="stylesheet" href="Assets/css/owl.theme.green.css">
     <style>
+    .mt
+    {
+        margin-top:100px;
+    }
     .owl-carousel{
         position:static;
     }
@@ -39,7 +43,7 @@
     <?php
         include('C_header.php');
     ?>
-    <div class="container"><div class="row"><div class="mt-5 col-md-12">
+    <div class="container"><div class="row"><div class="mt col-md-12">
     <div class="owl-carousel owl-theme mt-2">
     <div class="item bg-danger "><img src="Assets/images/1.jpg" class="img-fluid" alt="Image not supported"></div>
     <div class="item bg-warning "><img src="Assets/images/2.jpg" class="img-fluid" alt="Image not supported"></div>

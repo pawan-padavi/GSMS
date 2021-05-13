@@ -1,14 +1,18 @@
 <?php
-    $p_id =$_POST['p_id'];
-    $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db");
-    $q = "Delete FROM product where p_id='$p_id'";
-    
+    $p_id = $_POST['p_id'];
+    $p_id =implode($p_id,",");
+    echo"<pre>";
+     print_r($p_id);
+    echo"</pre>"; 
+    $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db") or die("Database not connected");
+    $q = "Delete FROM product where p_id IN($p_id)";
+     
     if(mysqli_query($connection,$q))
     {
-        echo 1;
+        echo "Record Delete Successful";
     }
     else
     {
-        echo 0;
+        echo "we are sorry about inconvience!";
     }
 ?>

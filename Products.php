@@ -42,7 +42,7 @@
                </ul>
             </div>
            </center>
-           
+           <button class="btn"><i class="fas fa-trash fa-2x text-danger" id="delete-button"></i></button>   
     <div id="view-product"></div>
     </div></div></div>
     <?php
@@ -64,39 +64,47 @@
                 $('#view-product').html(data);
             }
         });
-        //Delete data from product table
-        $(document).on("click",".product-delete",function(e){
-            e.preventDefault();
-           
+     //Delete data from product table
+        $("#delete-button").on("click",function(){
+           var p_id = [];
+        //    alert("you select delete button");
+            $(":checkbox:checked").each(function(key){
+                p_id[key] = $(this).val();
+            });
+            if(p_id=="")
+            {
+                alert("You are not select data for delete");
+            }
+            else
+            {
             if(confirm("Do You really want to Delete this"))
             {
-                var p_id = $(this).data('prod_delete');
             $.ajax({
                 url:"delete-product.php",
                 type:"POST",
                 data:{p_id: p_id},
                 success:function(data)
                 {
-                    if(data == 1)
-                    {
+                    // if(data)
+                    // {
                     //    alert("Data Deleted Successfull");
-                       $('#message').html("Data Deleted");
-                       $('#message').addClass('alert bg-success text-center text-light');
-                       setTimeout(Anim,1);
-                        function Anim(){
-                        document.location.reload();
-                        } 
-                    }
-                    else
-                    {
-                        $('#message').css('font-size','120%');
-                        $('#delete').html('DELETE PRODUCT QUANTITY');
-                        $('#delete').addClass('btn btn-danger mt-2 mb-2');
-                        // alert("Do yo want to delete this product firstly delete quantity");
-                    }
+                       $('#message').html(data);
+                       $('#message').addClass('alert bg-success text-center text-light mt-5');
+                    //    setTimeout(Anim,1);
+                    //     function Anim(){
+                    //     document.location.reload();
+                    //     } 
+                    // }
+                    // else
+                    // {
+                    //     $('#message').css('font-size','120%');
+                    //     $('#delete').html('DELETE PRODUCT QUANTITY');
+                    //     $('#delete').addClass('btn btn-danger mt-2 mb-2');
+                    //     // alert("Do yo want to delete this product firstly delete quantity");
+                    // }
                 }
             })
-            }
+            }}
         });
         // fetch data for update product
         $(document).on("click",".product-update",function(e){

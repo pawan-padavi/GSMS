@@ -29,11 +29,11 @@ if(($_FILES['p_img']['name']!=""))
             $dt = date('d-M-Y H:i:s'); //set date and time
             $dt1 = date('dis');    //set date for pid_with_name
              $date_time = $dt;
-             $p_id ='prod-'.$dt1;
+             $p_id = $dt1;
         if(!$c_name =="" AND !$sc_name == ""AND !$pd_ck=="")         
         {
             $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db") or die("DataBase not connected");
-            $q = "insert into product values('$p_id','$p_name','$filename','$pdesc','$c_name','$sc_name','$p_brand','$c_format',$p_price,'$p_search','$pd_ck','$date_time')";
+            $q = "insert into product values($p_id,'$p_name','$filename','$pdesc','$c_name','$sc_name','$p_brand','$c_format',$p_price,'$p_search','$pd_ck','$date_time')";
             if(mysqli_query($connection,$q))
                 {
                     echo 1; 

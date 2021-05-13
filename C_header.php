@@ -82,17 +82,17 @@
 
 <div class="container-fluid newheader"><div class="row">
 <div class="nav-item"><a href="index.php" class="nav-link"><div class="btn "><i class="fab fa-windows"></i>All Categories</div></a></div>
-    <div class="nav-item"><a href="C_spices.php" class="nav-link"><div class="btn"><i class="fab fa-product-hunt"></i>Spices</div></a></div>
-    <div class="nav-item"><a href="C_driedlegumes.php" class="nav-link"><div class="btn  "><i class="fab fa-first-order"></i>Legumes</div></a></div>
-    <div class="nav-item"><a href="C_grains.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i>Grains</div></a></div>
-    <div class="nav-item"><a href="C_other.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i>Other</div></a></div>
-    <div class="nav-item"><a href="C_newproducts.php" class="nav-link"><div class="btn"><i class="fab fa-bandcamp"></i>New</div></a></div>
-    <div class="nav-item"><a href="C_mycart.php" class="nav-link"><div class="btn"><i class="fa fa-shopping-cart"></i><div class="badge badge-pill"><b id="cart">
+    <div class="nav-item n"><a href="C_spices.php" class="nav-link"><div class="btn"><i class="fab fa-product-hunt"></i>Spices</div></a></div>
+    <div class="nav-item n"><a href="C_driedlegumes.php" class="nav-link"><div class="btn  "><i class="fab fa-first-order"></i>Legumes</div></a></div>
+    <div class="nav-item n"><a href="C_grains.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i>Grains</div></a></div>
+    <div class="nav-item n"><a href="C_other.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i>Other</div></a></div>
+    <div class="nav-item n"><a href="C_newproducts.php" class="nav-link"><div class="btn"><i class="fab fa-bandcamp"></i>New</div></a></div>
+    <div class="nav-item n"><a href="C_mycart.php" class="nav-link"><div class="btn"><i class="fa fa-shopping-cart"></i><div class="badge badge-pill"><b id="cart">
     <?php $count = count($_SESSION["shoping-cart"]); 
         echo $count;
      ?></b></div>My Cart</div></a></div>
-    <div class="nav-item"><a href="C_myaccount.php" class="nav-link"><div class="btn  "><i class="fas fa-user"></i><small class="text-uppercase"><?php echo " Hi '".$c_fname."' "; ?></small></div></a></div>
-    <div class="nav-item"><a href="c_logout.php" class="nav-link"><button class="btn btn-danger" style="width:100px"><i class="fas fa-sign-out-alt"></i></button></a></div>
+    <div class="nav-item n"><a href="C_myaccount.php" class="nav-link"><div class="btn  "><i class="fas fa-user"></i><small class="text-uppercase"><?php echo " Hi '".$c_fname."' "; ?></small></div></a></div>
+    <div class="nav-item n"><a href="c_logout.php" class="nav-link"><button class="btn btn-danger" style="width:100px"><i class="fas fa-sign-out-alt"></i></button></a></div>
 </div></div>
 
     <!-- <script src="Assets/js/jquery.js"></script>
