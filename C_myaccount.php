@@ -34,6 +34,7 @@ error_reporting(0);
         include('C_header.php');
     ?>
     <div class="container"><div class="row"><div class="col-md-6 mt-5">
+    <button class="btn border border-success btn-info mt-5" data-toggle="collapse" data-target="#profile_data">Click Me to View Profile Info</button>
     <?php
                 $c_id = $_SESSION["c_id"];
                 $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db") or die("Database not connected");
@@ -44,11 +45,12 @@ error_reporting(0);
                     while($row = mysqli_fetch_assoc($result))
                     {
         ?>
+        <div  id="profile_data" class="collapse">
         <form class="form-group" id="update-client-form" enctype="multipart/form-data">
-        <table class="table table-hovered table-bordered mt-5">
+        <table class="table table-hovered table-bordered mt-1">
         <thead class="thead-dark">
         <tr>
-        <th  colspan="2"><h4>Profile</h4></th><th><span><?php echo $_SESSION["c_id"]?><input type="hidden" name="c_id" value="<?php echo $_SESSION["c_id"]?>"></span></th>
+        <th  colspan="2"></div><input style="width:8em; border-radius:0%; border:4px solid white; height:5em;" type="image" src="Assets/upload-images/<?php echo $row['c_profilepic']; ?>" alt="image not found"></th><th><span>IDENTIFICATION: <?php echo $_SESSION["c_id"]?><input type="hidden" name="c_id" value="<?php echo $_SESSION["c_id"]?>"></span></th>
         </tr>
         </thead>
         <!--  -->
@@ -88,8 +90,10 @@ error_reporting(0);
         <tr>
         <th colspan="6" class="text-justify text-uppercase font-weight-bold"><span><input type="file" name="c_profilepic" id="c_profilepic" accept="image/*"></span><button class="btn btn-warning w-25 s" id="update-client">Update Data</button></th>
         </tr>
-        </table></form>
-        </div><div class="col-md-6 mt-5"><div id="msg"></div><input style="width:20em; border-radius:50%; border:10px solid pink; height:20em;" class="mt-5" type="image" src="Assets/upload-images/<?php echo $row['c_profilepic']; ?>" alt="image not found"></div></div></div>    
+        </table></form></div>
+        </div><div class="col-md-6 mt-5"><div id="my_orders" class="mt-5"><button class="btn print"><i class='fas fa-print fa-2x'></i></button>
+        <!-- here display orders -->
+        </div></div></div></div>
         <?php                
                     }
                 }
@@ -103,6 +107,28 @@ error_reporting(0);
     <script src="CHeader.js"></script>
     <script>
     $(document).ready(function(){
+    function printDiv(divName)
+    {
+        var printcontents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printcontents;
+        window.print();
+        document.body.innerHTML =originalContents;
+    }
+    $('.print').click(function(){
+        printDiv('my_orders');
+    })
+        function load()
+        {
+            $.ajax({
+                url:"c_fetchorders.php",
+                success:function(data)
+                {
+                    $('#my_orders').append(data);
+                }
+            })
+        }
+        load();
         $('#update-client-form').on("submit",function(e){
             e.preventDefault();
            var formData = new FormData(this);
@@ -114,8 +140,10 @@ error_reporting(0);
                processData:false,
                success:function(data)
                {
-                  $('#msg').html(data);
-                  $('#msg').addClass('mt-5');
+                  alert(data);
+                  setTimeout(() => {
+                      location.reload();
+                  }, 600);
                }
            })
         });

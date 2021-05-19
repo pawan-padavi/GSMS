@@ -16,8 +16,8 @@
    }
    .thumbnail
    {
-       height:80px;
-       width:75px;
+       height:250px;
+       width:350px;
        border:5px solid white;
    }   
    .pd
@@ -50,6 +50,7 @@
    {
        color:tomato;
    }
+   
    </style>
 </head>
 <body>
@@ -73,14 +74,7 @@
             $output="";
                  $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt">
                  <small><table class="table table-borderless">
-                 <tr><th style="border-bottom:1px solid black;" scope="col" colspan="6">PRODUCT CONFIRMATION TABLE</th></tr>
-                 <tr scope="row">
-                 <th scope="col">Image</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col" class="text-center" colspan="2">#</th>
-                </tr>';
+                 <tr><th style="border-bottom:1px solid black;" scope="col" colspan="6">PRODUCT CONFIRMATION TABLE</th></tr>';
                 foreach($cart as $c)
                 {
                     if(!empty($c))
@@ -89,24 +83,27 @@
                     <input type='hidden' name='p_id' id='p_id' value='{$c["p_id"]}'/>
                     <input type='hidden' name='cart_id' id='cart_id' value='{$c["cart_id"]}'/>
                     <input type='hidden' name='c_id' id='c_id' value='{$c["c_id"]}'/>
-                    <td scope='col'> <img name='p_img' id='p_img' class='thumbnail'src='Assets/upload-images/{$c["p_img"]}' alt='Image not found' value='{$c["p_img"]}'></img></td>
-                    <td scope='col' class='pd'><input type='hidden' name='p_name' id='p_name' value='{$c["p_name"]}'>{$c["p_name"]}-{$c["p_qnt"]}{$c["p_measure"]}</td>
-                    <td scope='col' class='pd'><input type='hidden' class='iprice' name ='iprice' id='iprice' value='{$c["p_price"]}'/>{$c["p_price"]}{$c["c_format"]}</td>
-                    <td scope='col' class='pd'><input data-id='{$c["p_id"]}' class='iquantity' name='iquantity' id='iquantity' type='number' value='1' min='1' max='10' /></td>
-                    <td scope='col' class='pd'><button type='button' class='btn btn-primary del-cart' data-id='{$c["p_id"]}'><span><i class='fa fa-trash'></i></span></button></td>
-                    <td scope='col' class='pd'><button type='submit' class='btn btn-info add-to-order' data-id='{$c["p_id"]}'><i class='fas fa-thumbs-up'></i></button></td>
+                    <td scope='col' style='color:indigo;font-size:20px;'> <img name='p_img' id='p_img' class='thumbnail'src='Assets/upload-images/{$c["p_img"]}' alt='Image not found' value='{$c["p_img"]}'></img><br>
+                    <input type='hidden' name='p_name' id='p_name' value='{$c["p_name"]}'>{$c["p_name"]}-{$c["p_qnt"]}{$c["p_measure"]}&nbsp;&nbsp;
+                    <input type='hidden' class='iprice' name ='iprice' id='iprice' value='{$c["p_price"]}'/>{$c["p_price"]}{$c["c_format"]}  &nbsp;&nbsp; <input style='width:150px; border:2x solid indigo; color:green;' type='text' name='ctotal' id='ctotal' value='Total: {$c["p_price"]}' disabled/><br><br>
+                    <input data-id='{$c["p_id"]}' class='iquantity' name='iquantity' id='iquantity' type='number' value='1' min='1' max='10' />&nbsp; &nbsp;
+                    <button type='submit' class='btn btn-success add-to-order' data-id='{$c["p_id"]}'><i class='fas fa-check'></i> Confirm</button>&nbsp; &nbsp;
+                    <button type='button' class='btn btn-danger del-cart' data-id='{$c["p_id"]}'><span><i class='fa fa-trash'></i>&nbsp;Remove</span></button><br>
+                    </td>
                     </tr></form></tbody>";
                     }
+                   
                 }
             echo $output.="</table></small></div>";    
         ?>
     <div class="col-md-6 col-lg-6 col-sm-12 mt">
     <small><table class="table table-borderless">
+    <tr><th colspan="5" style="color:red;">Make sure to product order final return policy not allowed yet in pendamic*</th></tr>
     <tr><th style="border-bottom:1px solid black;" colspan="5">ORDER DETAILS</th></tr>
     <tr><th>Product</th> <th>Price</th><th>quantity</th><th>Total</th><th>#</th> </tr>
     <?php
     $cid =$_SESSION["c_id"];
-    $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db");
+    include('config.php');
     $query = "SELECT * from cart where c_id=$cid";
     $result = mysqli_query($connection,$query);
     if(mysqli_num_rows($result)>0)
@@ -115,10 +112,10 @@
         {
     ?>
             <tr><td><input type="hidden" name="cid" id="cid"  value='<?php echo $row["c_id"];?>'/>
-            <?php echo $row["p_name"];?><input type="hidden" name="p_name" id="p_name" value='<?php echo $row["p_name"];?>'></td>
-            <td><?php echo $row["p_price"];?></td>
-            <td><?php echo $row["p_quantity"];?></td>
-            <td><?php echo $row["total"];?></td>
+            <?php echo $row["p_name"];?><input type="hidden" name="pname" id="pname" value='<?php echo $row["p_name"];?>'></td>
+            <td><input type="hidden" name="p_price" id="p_price" value="<?php echo $row["p_price"];?>" /><?php echo $row["p_price"];?></td>
+            <td><input style="font-weight:bolder; background:white; width:50px; border:none;" type="hidden" name="p_quantity" id="p_quantity" value="<?php echo $row["p_quantity"];?>" /><?php echo $row["p_quantity"];?></td>
+            <td><input style="font-weight:bolder; background:white; width:50px; border:none;" type="hidden" name="total" id="total" value="<?php echo $row["total"];?>"/><?php echo $row["total"];?></td>
             <td><button data-id='<?php echo $row["p_name"];?>' data-qnt='<?php echo $row["p_quantity"];?>' class="btn text-danger delete-item"><i class="fa fa-trash"></i></button></td></tr>
             
     <?php
@@ -126,8 +123,8 @@
     }
     }
     ?>
-    <tr><td colspan="3"><b>Grand Total</b></td>
-    <td colspan="2">
+    <tr><td colspan="3" style="border:1px solid indigo; border-right:none;"><b>Grand Total</b></td>
+    <td colspan="2"style="border:1px solid indigo; border-left:none;">
     <b><span class="fas fa-rupee-sign"></span>
     <?php echo $total;?>
     </b></td></tr>
@@ -138,11 +135,11 @@
     <td colspan="3"><div id="payment_methods">
     <ul id="view_pay_method" class="collapse">
     <span class="ms">online payment gateway under working</span>
-        <li><span><input type="radio" name="paymentmethod" id=""disabled group></span>&nbsp;Debit Cart</li>
-        <li><span><input type="radio" name="paymentmethod" id=""disabled></span>&nbsp;Credit Cart</li>
-        <li><span><input type="radio" name="paymentmethod" id="" disabled></span>&nbsp;Online Banking</li>
-        <li><span><input type="radio" name="paymentmethod" id="" value="cash_on_delivery" checked></span>&nbsp;Cash on Delivery</li>
-        <li><button type="submit" class="btn btn-info ordplace w-100">Place Order</button></li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod1" value="Debit_card" disabled /></span>&nbsp;Debit Cart</li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod2" value="credit_card" disabled /></span>&nbsp;Credit Cart</li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod3" value="online_banking" disabled /></span>&nbsp;Online Banking</li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod4" value="cash_on_delivery" checked /></span>&nbsp;Cash on Delivery</li>
+        <li><button type="submit" class="btn btn-info ordplace w-100" id="product-order">Place Order</button></li>
     </ul></div>
     </td>
     <td></td></tr>
@@ -153,7 +150,7 @@
     <p class="collapse" id="datahide">After Add to cart --> set Product quantity--->click to order for confirm order -->Select Payment method and Checkout</p>
     </div></div>
     </div>
-    <?php
+     <?php
         include('footer.php');
     ?>
     <script src="Assets/js/jquery.min.js"></script>
@@ -188,26 +185,6 @@
     </script>
     <script>
     $(document).ready(function(){
-    //script starts Delete products from Cart
-        $(document).on("click",".del-cart",function(e){
-            e.preventDefault();
-            var p_id = $(this).data('id');
-            // alert("This Id Send for Delete "+ p_id);
-            if(confirm("Do you want to Delete this Product form Cart"))
-            {
-            $.ajax({
-                url:"del-cart.php",
-                type:"POST",
-                data:{p_id:p_id},
-                success:function(data)
-                {
-                    document.location.reload();
-                }
-            });
-            }
-        })
-    // script ended for delete product from cart
-    //script starts for price calculation
     $(document).on("click",".delete-item",function(){
         var item = $(this).data('id');
         var qnt = $(this).data('qnt');
@@ -230,7 +207,45 @@
         }
     })
     });
-     </script>
-
+</script>
+//order
+<script>
+     $(document).ready(function(){
+         $('.iquantity').on("change",function(){
+             var iqt = $(this).val();
+             var price = $('#iprice').val();
+            var total = iqt*price;
+            $('#ctotal').val('Total: '+total);
+            //  alert(total);
+         });
+         $('#product-order').on("click",function(){
+            var pname =$('#pname').val();
+              var payment = $('input[name="paymentmethod"]:checked').val();
+                // alert(payment);
+                $.ajax({
+                    url:"paymentmethod.php",
+                    type:"POST",
+                    data:{payment:payment,pname:pname},
+                    success:function(data)
+                    {
+                        if(data == 1)
+                        {
+                            alert("Order placed successfully");
+                        }
+                        else if(data == 0)
+                        {
+                            alert("Order not place successfully");
+                        }
+                        else
+                        {
+                            alert(data);
+                        }
+                        alert(data);
+                        location.replace('C_myaccount.php');
+                    }
+                });
+         });
+     });
+</script>
 </body>
 </html>

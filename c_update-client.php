@@ -24,11 +24,11 @@
                     $c_email =$_POST['c_email'];
                     $c_mobile =$_POST['c_mobile'];
                     $pincode =$_POST['pincode'];
-                    $q="UPDATE client_registration set c_fname='{$c_fname}',c_mname='{$c_mname}',c_lname='{$c_lname}',c_village='{$c_village}',tehsil='{$tehsil}',district='{$district}',state='{$state}',pincode={$pincode},c_email ='{c_email}',c_mobile={$c_mobile},c_profilepic = '{$file}' where c_id = $c_id";
+                    $q="UPDATE client_registration set c_fname='{$c_fname}',c_mname='{$c_mname}',c_lname='{$c_lname}',c_village='{$c_village}',tehsil='{$tehsil}',district='{$district}',state='{$state}',pincode={$pincode},c_email ='{$c_email}',c_mobile={$c_mobile},c_profilepic = '{$file}' where c_id = $c_id";
                     $query = mysqli_query($connection,$q) or die("Query not executed properly");
                     if($query)
                     {
-                        echo "Data updation perform easily";
+                        echo "Your Profile Update successfully";
                     }
                     else
                     {
@@ -57,7 +57,7 @@
                 $query = mysqli_query($connection,$q) or die("Query not executed properly");
                 if($query)
                 {
-                    echo "Data updation perform easily";
+                    echo "Profile update successfully";
                 }
                 else
                 {
