@@ -35,7 +35,7 @@
             z-index:1;
             margin-bottom:auto;
             box-sizing:border-box;
-            box-shadow:10px 5px 20px 0px black;
+            /* box-shadow:10px 5px 20px 0px black; */
         }
         
         }
@@ -48,32 +48,27 @@
         {
             text-transform:uppercase;
         }
-        .navbar li:hover{
-            color:white;
-        }
+        
         #cart
         {
             font-size:15px;
             color:red;
         }
-        .newheader div
+        .newheader div a .btn
         {
-            padding:5px;
+            /* padding:5px; */
+            margin-left:10px;
+            border:2px solid indigo;
         }
     .newheader div .btn:hover
         {
-            background-color:green;
+            background-color:indigo;
             color:white;
-            font-weight:bolder;
-        }
-    .newheader
-        {
-            /* background-color:lightblue; */
-            background-image:linear-gradient(to left, pink,white);
         }
         .newheader 
         {
             font-weight:bolder;
+            background:white;
         }
        
     </style>
@@ -81,7 +76,8 @@
 <body>
 
 <div class="container-fluid newheader"><div class="row">
-<div class="nav-item"><a href="index.php" class="nav-link"><div class="btn "><i class="fab fa-windows"></i>All Categories</div></a></div>
+<div class="nav-item"><a href="#" class="nav-link"><div class="btn ">GSMS</div></a></div>
+<div class="nav-item"><a href="index.php" class="nav-link"><div class="btn "><i class="fab fa-windows"></i>Home</div></a></div>
     <div class="nav-item n"><a href="C_spices.php" class="nav-link"><div class="btn"><i class="fab fa-product-hunt"></i>Spices</div></a></div>
     <div class="nav-item n"><a href="C_driedlegumes.php" class="nav-link"><div class="btn  "><i class="fab fa-first-order"></i>Legumes</div></a></div>
     <div class="nav-item n"><a href="C_grains.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i>Grains</div></a></div>

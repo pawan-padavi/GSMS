@@ -17,11 +17,17 @@
         }
         #buttons li button
         {
-            border-radius:10px 0px 10px 0px;
+            border-radius:5px 5px 5px 5px;
+        }
+        #buttons li button:hover
+        {
+            background:indigo;
+            color:white;
         }
         .sd
         {
-            box-shadow:0px 10px 10px 0px red;
+            border:2px solid red;
+            box-shadow:0px 10px 5px 0px indigo;
         }
     </style>
 </head>
@@ -35,10 +41,10 @@
     <div id="view-img-updt"></div>
            <center class="mb-2 mt-5">            
            <div id="buttons"><ul>
-                   <li><a href="add-products.php"><button class="btn btn-primary sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Products</button></a></li>
-                   <li><a href="#product-images.php"><button class="btn btn-secondary sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Images</button></a></li>
-                   <li><a href="#add-product-discount.php"><button class="btn btn-info sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Discount</button></a></li>
-                   <li><a href="Add-prod-quantity.php"><button class="btn btn-success sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Quantity</button></a></li>
+                   <li><a href="add-products.php"><button class="btn sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Products</button></a></li>
+                   <li><a href="#product-images.php"><button class="btn sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Images</button></a></li>
+                   <li><a href="#add-product-discount.php"><button class="btn sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Discount</button></a></li>
+                   <li><a href="Add-prod-quantity.php"><button class="btn sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Quantity</button></a></li>
                </ul>
             </div>
            </center>
