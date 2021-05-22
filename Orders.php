@@ -12,8 +12,7 @@
     include('header.php');
     ?>
     <div class="container"><div class="row"><div class="col-md-6 col-lg-6 col-sm-6 mt-5">
-    <button class="btn border border-dark mt-5" id="time"></button>
-    <div class="mt-1" id="product_orders">
+    <div class="mt-5" id="product_orders">
     <!-- ordes displayed -->
     </div></div>
     <div class="col-md-6 col-lg-6 col-sm-6 mt-5"><div class="mt-5 border border-dark">Right Side<hr color="green"></div></div>

@@ -135,10 +135,10 @@
     <td colspan="3"><div id="payment_methods">
     <ul id="view_pay_method" class="collapse">
     <span class="ms">online payment gateway under working</span>
-        <li><span><input type="radio" name="paymentmethod" id="paymentmethod1" value="Debit_card" disabled /></span>&nbsp;Debit Cart</li>
-        <li><span><input type="radio" name="paymentmethod" id="paymentmethod2" value="credit_card" disabled /></span>&nbsp;Credit Cart</li>
-        <li><span><input type="radio" name="paymentmethod" id="paymentmethod3" value="online_banking" disabled /></span>&nbsp;Online Banking</li>
-        <li><span><input type="radio" name="paymentmethod" id="paymentmethod4" value="cash_on_delivery" checked /></span>&nbsp;Cash on Delivery</li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod1" value="D_CARD" /></span>&nbsp;Debit Cart</li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod2" value="C_CARD"  /></span>&nbsp;Credit Cart</li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod3" value="OLN_B" /></span>&nbsp;Online Banking</li>
+        <li><span><input type="radio" name="paymentmethod" id="paymentmethod4" value="COD" /></span>&nbsp;Cash on Delivery</li>
         <li><button type="submit" class="btn btn-info ordplace w-100" id="product-order">Place Order</button></li>
     </ul></div>
     </td>
@@ -221,7 +221,7 @@
          $('#product-order').on("click",function(){
             var pname =$('#pname').val();
               var payment = $('input[name="paymentmethod"]:checked').val();
-                // alert(payment);
+                 alert(payment);
                 $.ajax({
                     url:"paymentmethod.php",
                     type:"POST",
