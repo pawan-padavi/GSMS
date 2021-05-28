@@ -73,7 +73,6 @@ else
         {
        border:1px solid black;
        box-sizing:border-box;
-       box-shadow:0px 2px 10px 0px black;
         }
     </style>
 </head>

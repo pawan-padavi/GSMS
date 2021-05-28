@@ -27,7 +27,7 @@
         .sd
         {
             border:2px solid red;
-            box-shadow:0px 10px 5px 0px indigo;
+            box-shadow:0px 5px 5px 0px indigo;
         }
     </style>
 </head>
@@ -39,7 +39,7 @@
     <div id="message1" class='mt-2'></div> <div class='mt-2' id="message"></div><center><div id="view_q_delete"></div></center><center><div id="delete"></div></center>
     <div id="product-update"></div>
     <div id="view-img-updt"></div>
-           <center class="mb-2 mt-5">            
+           <center class="mt-5">            
            <div id="buttons"><ul>
                    <li><a href="add-products.php"><button class="btn sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Products</button></a></li>
                    <li><a href="#product-images.php"><button class="btn sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Images</button></a></li>
