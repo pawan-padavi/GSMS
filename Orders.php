@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="Assets/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/css/all.css">
     <style>
+    
     </style>
 </head>
 <body>
@@ -17,7 +18,7 @@
     <div class="mt-5" id="product_orders">
     <!-- ordes displayed -->
     </div></div>
-    <div class="col-md-6 col-lg-6 col-sm-6 mt-5"><div class="mt-5" style="margin-left:20px;">Right Side<hr color="green"></div></div>
+    <div class="col-md-6 col-lg-6 col-sm-6 mt-5"><div class="mt-5" style="margin-left:20px;"><div id="dispatcheddata"></div></div></div>
     </div></div>
     <?php
     include('footer.php');
@@ -28,6 +29,13 @@
     <script src="CHeader.js"></script>
     <script>
     $(document).ready(function(){
+        $.ajax({
+                    url:"fetchdispatchproduct.php",
+                    success:function(data)
+                    {
+                        $('#dispatcheddata').html(data);
+                    }
+            });
         var date = new Date();
         $('#time').html(date);
         
@@ -45,15 +53,15 @@
             var qnt =$(this).data("qnt");
             var ordid =$(this).data("ordid");
             var payment =$(this).data("payment");
-            
             $.ajax({
                 url:"dispatchProduct.php",
                 type:"POST",
                 data:{id:id,pid:pid,qnt:qnt,payment:payment,ordid:ordid},
                 success:function(data)
                 {
-                    alert(data);
-                    $(this).attr('disabled');
+                    setTimeout(() => {
+                        document.location.reload();
+                    }, 100);
                 }
             })
         })

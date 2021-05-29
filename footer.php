@@ -38,11 +38,15 @@
           padding:10px;
           font-weight:bolder;
       }  
+      .footer-margin
+      {
+            margin-top:100px;
+      }
     </style>
 </head>
 <body>
       
-      <div class="container-fluid">
+      <div class="container-fluid footer-margin">
       <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-12">
       <div class="card border footer mt-2 mb-5" style="height:20em;"><div class="card-header"><i class="fa fa-users"></i> About</div><div class="card-body ft" ><ul>

@@ -11,7 +11,9 @@ $payment=$_POST["payment"];
 $query ="INSERT INTO dispatchproduct values({$dp_id},{$ordid},{$id},{$p_id},{$qnt},'{$payment}')"; 
 if($result = mysqli_query($connection,$query))
 {
-    echo "Product Dispatched Product";         
+    
+        echo"Data Dispatched";
+   
 }
 else
 {
