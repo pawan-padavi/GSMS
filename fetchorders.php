@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$query ="SELECT orders.* FROM orders LEFT OUTER JOIN dispatchproduct ON orders.ordid=dispatchproduct.ordid WHERE dispatchproduct.ordid IS NULL";
+$query ="SELECT orders.* FROM orders LEFT OUTER JOIN dispatchproduct ON orders.ordid=dispatchproduct.ordid WHERE dispatchproduct.ordid IS NULL order by orders.c_id DESC";
 $result = mysqli_query($connection,$query) or die("Query Not Executed");
 $output ="";
 if(mysqli_num_rows($result)>0)

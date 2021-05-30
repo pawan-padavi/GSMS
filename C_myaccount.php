@@ -93,6 +93,9 @@ error_reporting(0);
         </table></form></div>
         </div><div class="col-md-6 mt-5"><div id="my_orders" class="mt-5"><button class="btn print"><i class='fas fa-print fa-2x'></i></button>
         <!-- here display orders -->
+        </div>
+        <div id="dispatched">
+        <!-- Here display dispached products and time to reached product to address -->
         </div></div></div></div>
         <?php                
                     }
@@ -129,6 +132,17 @@ error_reporting(0);
             })
         }
         load();
+        function dispatchproduct()
+        {
+            $.ajax({
+                url:"c_proddispatchdetail.php",
+                success:function(data)
+                {
+                    $('#dispatched').append(data);
+                }
+            });
+        }
+        dispatchproduct();
         $('#update-client-form').on("submit",function(e){
             e.preventDefault();
            var formData = new FormData(this);

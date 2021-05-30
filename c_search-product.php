@@ -1,6 +1,7 @@
 <?php
     include('config.php');
-    $query = "SELECT * FROM product inner join product_quantity on product.p_id=product_quantity.p_id";
+    $input =$_POST['search'];
+    $query = "SELECT * FROM product inner join product_quantity on product.p_id=product_quantity.p_id where product.p_name like '%$input%'";
     $result =  mysqli_query($connection,$query);
     $output = "";
     $price = 300;

@@ -33,18 +33,22 @@
     {
         box-shadow:0px 5px 20px 0px green;
     }
-    /* body{
-        background-image:linear-gradient(to top,orange,green);
-        /* opacity:1; */
-    } */
+    #search:hover{
+     background-color:black;
+     color:white;
+     text-transform:capitalize;
+    }
     </style>
 </head>
 <body>
     <?php
         include('C_header.php');
     ?>
-    <div class="container"><div class="row"><div class="mt col-md-12">
-    <div class="owl-carousel owl-theme mt-2">
+    <div class="container"><div class="row"><div class="offset-3"></div><div class="col-6 mt">
+    <table class="table table-borderless"><tr><th><input type="text" name="search" id="search" class="form-control w-100"></th><th><span><button class="btn btn-info" id="search_submit">Search</button></span></th></tr></table>
+    </div><div class="offset-3"></div></div></div>
+    <div class="container"><div class="row"><div class="mt-1 col-md-12">
+    <div class="owl-carousel owl-theme mt-2 crsl">
     <div class="item bg-danger "><img src="Assets/images/1.jpg" class="img-fluid" alt="Image not supported"></div>
     <div class="item bg-warning "><img src="Assets/images/2.jpg" class="img-fluid" alt="Image not supported"></div>
     <div class="item bg-dark "><img src="Assets/images/8.jpg" class="img-fluid" alt="Image not supported"></div>
@@ -56,7 +60,7 @@
     </div>    
     </div></div>
     <div id="message"></div>
-   
+    <div id="show-search-Products" class="mt-5"></div>
     <div id="show-Products"></div>
     
 </div>
@@ -109,6 +113,20 @@
                 $('#show-Products').html(data);
             }
         });
+        
+        $('#search').keyup(function(){
+            $('.crsl').hide();
+            var search = $(this).val();
+            $.ajax({
+                url:"c_search-product.php",
+                type:"POST",
+                data:{search:search},
+                success:function(data)
+                {
+                    $('#show-search-Products').html(data);
+                }
+            });
+        })
     })
     </script>
     <!-- fetch products ends -->
@@ -130,7 +148,6 @@
                         setTimeout(() => {
                             document.location.reload();
                         }, 600);
-
                 }
                  })
             })
