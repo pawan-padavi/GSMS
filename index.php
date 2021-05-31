@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="Assets/css/owl.carousel.css">
     <link rel="stylesheet" href="Assets/css/owl.theme.green.css">
     <style>
+    body
+    {
+        /* background-image:url('Assets/grocery.jpg'); */
+        background-color:;
+        background-repeat:no-repeat,repeat;
+        background-position:center;
+        background-size:cover;
+        opacity:1;
+    }
     .mt
     {
         margin-top:100px;
@@ -33,6 +42,12 @@
     {
         box-shadow:0px 5px 20px 0px green;
     }
+    #search_submit
+    {
+            box-shadow:0px 5px 5px 0px indigo;
+            background:black;
+            color:white;
+    }
     #search:hover{
      background-color:black;
      color:white;
@@ -44,9 +59,9 @@
     <?php
         include('C_header.php');
     ?>
-    <div class="container"><div class="row"><div class="offset-3"></div><div class="col-6 mt">
-    <table class="table table-borderless"><tr><th><input type="text" name="search" id="search" class="form-control w-100"></th><th><span><button class="btn btn-info" id="search_submit">Search</button></span></th></tr></table>
-    </div><div class="offset-3"></div></div></div>
+    <div class="container"><div class="row"><div class="offset-md-2"></div><div class="col-md-8 mt">
+    <table class="table table-borderless"><tr><th><input type="text" name="search" id="search" class="form-control w-100"></th><th><span><button class="btn" id="search_submit">Search</button></span></th></tr></table>
+    </div><div class="offset-md-2"></div></div></div>
     <div class="container"><div class="row"><div class="mt-1 col-md-12">
     <div class="owl-carousel owl-theme mt-2 crsl">
     <div class="item bg-danger "><img src="Assets/images/1.jpg" class="img-fluid" alt="Image not supported"></div>
@@ -116,6 +131,7 @@
         
         $('#search').keyup(function(){
             $('.crsl').hide();
+            $('#show-Products').hide();
             var search = $(this).val();
             $.ajax({
                 url:"c_search-product.php",
@@ -145,9 +161,9 @@
                 {
 
                         $('#message').html(data); 
-                        setTimeout(() => {
-                            document.location.reload();
-                        }, 600);
+                       setTimeout(() => {
+                           $('#cartload').load(' #cartload');
+                       }, 100);
                 }
                  })
             })

@@ -10,6 +10,8 @@
     if(isset($_SESSION["c_id"]))
     {
         unset($_SESSION["c_id"]);
+        unset($_SESSION["shoping-cart"]);
+        unset($_SESSION["c_village"]);
          header('location:c_login.php');
     }
 ?>

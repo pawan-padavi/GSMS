@@ -28,4 +28,8 @@
         }
         echo $output.="</div>";
     }
+    else
+    {
+        echo "<h1>PRODUCT NOT FOUND...</h1>";
+    }
 ?>

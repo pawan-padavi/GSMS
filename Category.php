@@ -13,7 +13,7 @@
     ?>
     <div class="container"><div class="row"><div class="col-md-12 col-lg-12 col-sm-12">
     <div  class="alert alert-dismissable" id="message"></div>
-    <div id="update-data"></div>
+    <div id="update-data" class="mt-5"></div>
            <center><a href="Add-category.php"><button class="btn btn-primary mt-5 mb-5"><i class="fa fa-plus"></i> Add Category</button></a></center>
     <div id="view_category"></div>
     </div></div></div>

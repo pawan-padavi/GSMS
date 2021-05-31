@@ -1,6 +1,3 @@
-<?php
-    // session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,47 +54,23 @@
     <?php
         include('C_header.php');
     ?>
-    
+  <?php
+        if(empty($_SESSION["c_village"]))
+        {
+             echo "<script>alert('Please update your Address');
+             document.location.replace('C_myaccount.php');
+             </script>";
+        }  
+    ?>    
     <div class="container">
     <div class="row"><div class="col-md-12"><div id="message mb-2"></div></div></div>
     <div class="row">
-        <?php
-    //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
-    //      "p_img"=>$row["p_img"],"p_name"=>$row["p_name"],"p_qnt"=>$row["p_qnt"],"p_measure"=>$row["p_measure"],"p_price"=>$row["p_price"],
-    //    "c_format"=>$row["c_format"]);
-    //    $path ='Assets/upload-images/';
-
-        $cart = $_SESSION["shoping-cart"];
-        // echo"<pre>";
-        // print_r($cart);
-        // echo"</pre>";
-            $output="";
-                 $output.='<div class="col-md-6 col-lg-6 col-sm-12 mt">
-                 <small><table class="table table-borderless">
-                 <tr><th style="border-bottom:1px solid black;" scope="col" colspan="6">PRODUCT CONFIRMATION TABLE</th></tr>';
-                foreach($cart as $c)
-                {
-                    if(!empty($c))
-                    {
-                    $output.="<tbody><form><tr scope='row'>
-                    <input type='hidden' name='p_id' id='p_id' value='{$c["p_id"]}'/>
-                    <input type='hidden' name='cart_id' id='cart_id' value='{$c["cart_id"]}'/>
-                    <input type='hidden' name='c_id' id='c_id' value='{$c["c_id"]}'/>
-                    <td scope='col' style='color:indigo;font-size:20px;'> <img name='p_img' id='p_img' class='thumbnail'src='Assets/upload-images/{$c["p_img"]}' alt='Image not found' value='{$c["p_img"]}'></img><br>
-                    <input type='hidden' name='p_name' id='p_name' value='{$c["p_name"]}'>{$c["p_name"]}-{$c["p_qnt"]}{$c["p_measure"]}&nbsp;&nbsp;
-                    <input type='hidden' class='iprice' name ='iprice' id='iprice' value='{$c["p_price"]}'/>{$c["p_price"]}{$c["c_format"]}  &nbsp;&nbsp; <input style='width:150px; border:2x solid indigo; color:green;' type='text' name='ctotal' id='ctotal' value='Total: {$c["p_price"]}' disabled/><br><br>
-                    <input data-id='{$c["p_id"]}' class='iquantity' name='iquantity' id='iquantity' type='number' value='1' min='1' max='10' />&nbsp; &nbsp;
-                    <button type='submit' class='btn btn-success add-to-order' data-id='{$c["p_id"]}'><i class='fas fa-check'></i> Confirm</button>&nbsp; &nbsp;
-                    <button type='button' class='btn btn-danger del-cart' data-id='{$c["p_id"]}'><span><i class='fa fa-trash'></i>&nbsp;Remove</span></button><br>
-                    </td>
-                    </tr></form></tbody>";
-                    }
-                   
-                }
-            echo $output.="</table></small></div>";    
-        ?>
+       <div class="col-md-6 col-lg-6 col-sm-12 mt">
+       <div id="confirmcartproducts"></div>
+       <!-- confirmcartproducts -->
+       </div>
     <div class="col-md-6 col-lg-6 col-sm-12 mt">
-    <small><table class="table table-borderless">
+    <small><table class="table table-borderless" id="orderdetail">
     <tr><th colspan="5" style="color:red;">Make sure to product order final return policy not allowed yet in pendamic*</th></tr>
     <tr><th style="border-bottom:1px solid black;" colspan="5">ORDER DETAILS</th></tr>
     <tr><th>Product</th> <th>Price</th><th>quantity</th><th>Total</th><th>#</th> </tr>
@@ -144,6 +117,8 @@
     </td>
     <td></td></tr>
     </table></small></div></div>
+    <?php echo"<h5 style='color:indigo; text-shadow:1px 2px 1px black;'> LOCATION:  ". strtoupper($_SESSION["c_village"])."</h5>"; ?>
+
     <button class="btn btn-primary" data-toggle="collapse" data-target="#datahide">Lern more</button>
     <div class="row">
     <div class="col-md-12">
@@ -159,7 +134,20 @@
     <script src="CHeader.js"></script>
     <script>
     $(document).ready(function(){
-    $('.add-to-order').on("click",function(e){
+
+        function confirmcartproducts()
+        {
+            $.ajax({
+                url:"c_confirmcartproducts.php",
+                success:function(data)
+                {
+                    $('#confirmcartproducts').html(data);
+                }
+            })
+        }
+        confirmcartproducts();
+
+    $(document).on("click",".add-to-order",function(e){
         e.preventDefault();
         var p_id = $('#p_id').val();
         var cart_id = $('#cart_id').val();
@@ -176,8 +164,10 @@
                 $('#message').html(data);
                 $('#message').addClass('mt mb-5');
                 setTimeout(() => {
-                    document.location.reload();
-                }, 2000);
+                    $('#orderdetail').load(' #orderdetail');
+                    confirmcartproducts();
+                    $('#cartload').load(' #cartload');
+                }, 100);
             }
         })
     })
@@ -200,8 +190,8 @@
                     $('#message').html("Data Deleted Successfully");
                     $('#message').addClass('mt-5 alert alert-info');
                     setTimeout(() => {
-                        document.location.reload();
-                    }, 600);
+                        $('#orderdetail').load(' #orderdetail');
+                    }, 100);
                 }
             });
         }
@@ -211,17 +201,18 @@
 //order
 <script>
      $(document).ready(function(){
-         $('.iquantity').on("change",function(){
+         $(document).on("change",".iquantity",function(){
              var iqt = $(this).val();
              var price = $('#iprice').val();
             var total = iqt*price;
             $('#ctotal').val('Total: '+total);
             //  alert(total);
          });
-         $('#product-order').on("click",function(){
+
+         $(document).on("click","#product-order",function(){
             var pname =$('#pname').val();
               var payment = $('input[name="paymentmethod"]:checked').val();
-                 alert(payment);
+                //  alert(payment);
                 $.ajax({
                     url:"paymentmethod.php",
                     type:"POST",
@@ -240,7 +231,7 @@
                         {
                             alert(data);
                         }
-                        alert(data);
+                        // alert(data);
                         location.replace('C_myaccount.php');
                     }
                 });
@@ -249,3 +240,7 @@
 </script>
 </body>
 </html>
+<!--  //      $_SESSION["shoping-cart"][$pid]= array("p_id"=>$p_id,"c_id"=>$c_id,"cart_id"=>$cart_id,
+    //      "p_img"=>$row["p_img"],"p_name"=>$row["p_name"],"p_qnt"=>$row["p_qnt"],"p_measure"=>$row["p_measure"],"p_price"=>$row["p_price"],
+    //    "c_format"=>$row["c_format"]);
+    //    $path ='Assets/upload-images/'; -->

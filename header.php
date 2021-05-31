@@ -74,21 +74,27 @@ else
        border:1px solid black;
        box-sizing:border-box;
         }
+        .k{
+            /* border:2px solid red; */
+            box-shadow:0px 5px 5px 0px indigo;
+            background:black;
+            color:white;
+        }
     </style>
 </head>
 <body>
 <div class="container-fluid head"><div class="row"><div class="col-md-12 col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-info">
     <ul class="navbar-nav">
-    <li class="nav-item"><a href="Dashboard.php" class="nav-link"><div class="btn"><i class="fab fa-windows"></i> Dashboard</div></a></li>
-    <li class="nav-item"><a href="Products.php" class="nav-link"><div class="btn"><i class="fab fa-product-hunt"></i> Products </div></a></li>
-    <li class="nav-item"><a href="Orders.php" class="nav-link"><div class="btn"><i class="fab fa-first-order"></i> Orders</div></a></li>
-    <li class="nav-item"><a href="Category.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i> Category</div></a></li>
-    <li class="nav-item"><a href="Subcategory.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i> Sub</div></a></li>
-    <li class="nav-item"><a href="Users.php" class="nav-link"><div class="btn"><i class="fa fa-users"></i> Users</div></a></li>
-    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn"><i class="fas fa-edit"></i> Edit</div></a></li>
-    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn"><small><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></small></div></a></li>
-    <li class="nav-item"><a href="logout.php" class="nav-link"><button type="button" class="btn btn-danger" style="width:100px;"><i class="fas fa-sign-out-alt"></i></button></a></li>
+    <li class="nav-item"><a href="Dashboard.php" class="nav-link"><div class="btn k"><i class="fab fa-windows"></i> Dashboard</div></a></li>
+    <li class="nav-item"><a href="Products.php" class="nav-link"><div class="btn k"><i class="fab fa-product-hunt"></i> Products </div></a></li>
+    <li class="nav-item"><a href="Orders.php" class="nav-link"><div class="btn k"><i class="fab fa-first-order"></i> Orders</div></a></li>
+    <li class="nav-item"><a href="Category.php" class="nav-link"><div class="btn k"><i class="fa fa-list-alt"></i> Category</div></a></li>
+    <li class="nav-item"><a href="Subcategory.php" class="nav-link"><div class="btn k"><i class="fa fa-list-alt"></i> Sub</div></a></li>
+    <li class="nav-item"><a href="Users.php" class="nav-link"><div class="btn k"><i class="fa fa-users"></i> Users</div></a></li>
+    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn k"><i class="fas fa-edit"></i> Edit</div></a></li>
+    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn k"><small><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></small></div></a></li>
+    <li class="nav-item"><a href="logout.php" class="nav-link"><button type="button" class="btn btn-danger k" style="width:100px;"><i class="fas fa-sign-out-alt"></i></button></a></li>
     </ul>
     </nav>
 </div></div></div>

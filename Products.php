@@ -26,8 +26,10 @@
         }
         .sd
         {
-            border:2px solid red;
+            /* border:2px solid red; */
             box-shadow:0px 5px 5px 0px indigo;
+            background:black;
+            color:white;
         }
     </style>
 </head>
@@ -37,8 +39,8 @@
     ?> 
     <div class="container "><div class="row"><div class="mt-5 col-md-12 col-lg-12 col-sm-12">
     <div id="message1" class='mt-2'></div> <div class='mt-2' id="message"></div><center><div id="view_q_delete"></div></center><center><div id="delete"></div></center>
-    <div id="product-update"></div>
-    <div id="view-img-updt"></div>
+    <div id="product-update" class="mt-5"></div>
+    <div id="view-img-updt" class="mt-5"></div>
            <center class="mt-5">            
            <div id="buttons"><ul>
                    <li><a href="add-products.php"><button class="btn sd"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Products</button></a></li>
@@ -48,7 +50,6 @@
                </ul>
             </div>
            </center>
-           <button class="btn"><i class="fas fa-trash fa-2x text-danger" id="delete-button"></i></button>   
     <div id="view-product"></div>
     </div></div></div>
     <?php
@@ -62,6 +63,8 @@
     $(document).ready(function(){
         
        //fetch product data and set on view-product div
+       function viewproduct()
+       {
         $.ajax({
             url:"view-product.php",
             type:"POST",
@@ -70,8 +73,11 @@
                 $('#view-product').html(data);
             }
         });
+       }
+       viewproduct();
      //Delete data from product table
-        $("#delete-button").on("click",function(){
+        $(document).on("click","#delete-button",function(e){
+           e.preventDefault();
            var p_id = [];
         //    alert("you select delete button");
             $(":checkbox:checked").each(function(key){
@@ -91,23 +97,12 @@
                 data:{p_id: p_id},
                 success:function(data)
                 {
-                    // if(data)
-                    // {
-                    //    alert("Data Deleted Successfull");
                        $('#message').html(data);
                        $('#message').addClass('alert bg-success text-center text-light mt-5');
-                    //    setTimeout(Anim,1);
-                    //     function Anim(){
-                    //     document.location.reload();
-                    //     } 
-                    // }
-                    // else
-                    // {
-                    //     $('#message').css('font-size','120%');
-                    //     $('#delete').html('DELETE PRODUCT QUANTITY');
-                    //     $('#delete').addClass('btn btn-danger mt-2 mb-2');
-                    //     // alert("Do yo want to delete this product firstly delete quantity");
-                    // }
+                       setTimeout(() => {
+                           $('#view-product').load(" #view-product");
+                           viewproduct();
+                       }, 100);
                 }
             })
             }}
@@ -123,10 +118,10 @@
                 success:function(data)
                 {
                     $('#product-update').html(data);
-                    // $('#view_q_delete').hide();
                     $('#view-product').hide();
                      $('#delete').hide();
                     $('#message').hide();
+                    $('#delete-button').hide();
                 }
             });
         });
@@ -154,11 +149,7 @@
                         $('#message1').html('Data updated Successfully');
                         $('#message1').addClass('text-light bg-success  alert border border-success text-center mt-2 mb-2');
                         // alert(" Sub Category Update Successfully");
-                        setTimeout(Anim,3);
-                        function Anim(){
-                        document.location.reload();
-                                    }
-
+                        
                     }
                     else
                     {
@@ -224,6 +215,7 @@
                 success : function(data){
                     $('#view-img-updt').html(data);
                     $('#view-product').hide();
+                    $('#delete-button').hide();
                 }
             })
         })  

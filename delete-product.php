@@ -1,9 +1,6 @@
 <?php
     $p_id = $_POST['p_id'];
     $p_id =implode($p_id,",");
-    echo"<pre>";
-     print_r($p_id);
-    echo"</pre>"; 
     $connection = mysqli_connect("localhost","root","","satpuda_online_shop_db") or die("Database not connected");
     $q = "Delete FROM product where p_id IN($p_id)";
      

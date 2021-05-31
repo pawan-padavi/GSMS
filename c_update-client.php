@@ -1,4 +1,5 @@
 <?php
+session_start();
 // error_reporting(0);
    include('config.php');
 
@@ -13,7 +14,7 @@
                 $result = move_uploaded_file($tmp_file,$final);
                 if($result)
                     {
-                    $c_id = $_POST['c_id'];
+                    $c_id = $_SESSION["c_id"];
                     $c_fname =$_POST['c_fname'];
                     $c_mname =$_POST['c_mname'];
                     $c_lname =$_POST['c_lname'];
@@ -42,7 +43,7 @@
             }
             else
             {
-                $c_id = $_POST['c_id'];
+                $c_id = $_SESSION["c_id"];
                 $c_fname =$_POST['c_fname'];
                 $c_mname =$_POST['c_mname'];
                 $c_lname =$_POST['c_lname'];

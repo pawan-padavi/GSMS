@@ -38,6 +38,7 @@ date_default_timezone_set('Asia/Kolkata');
         <tr scope="row"><th scope="col" colspan="3"><center><input type="submit" value="Register" name="Register" class="btn btn-success"></center></th></tr>
 </tbody>
 </form>
+<tr><th colspan="3"><a href="c_login.php"><center><button class="btn btn-info w-50">Login</button></center></a></th></tr>
 </table>
 <div id="message"></div>
 </div></div></div>

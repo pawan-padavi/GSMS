@@ -8,7 +8,7 @@
         $output = '<small><form id=""><table class="table table-sm table-hover table-bordered">
         <thead class="text-center thead-light">
         <tr scope="row">
-        <th scope="col"></th>
+        <th scope="col"><button class="btn"><i class="fas fa-trash fa-2x text-danger" id="delete-button"></i></button></th>
         <th scope="col">ID</th>
         <th scope="col">STOCK</th>
         <th scope="col">IMAGE</i></th>

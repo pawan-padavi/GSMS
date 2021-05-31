@@ -17,7 +17,7 @@ date_default_timezone_set('Asia/Kolkata');
     ?>
     <div class="container"><div class="row"><div class="mt-5 col-md-12 col-lg-12 col-sm-12">
         <div id="message"></div>
-    <center><table class="table table-bordered mt-2 table-hover w-50">
+    <center><table class="table table-bordered mt-5 table-hover w-50">
         <form name="add-prod-quantity" id="add-prod-quantity" class="form-group">
     <thead class="thead-dark"><tr scope="row"><th scope="col" class="text-center" colspan="2">Add Product Quantity form</th></tr>
     </thead>    

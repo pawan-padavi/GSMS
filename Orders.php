@@ -18,7 +18,8 @@
     <div class="mt-5" id="product_orders">
     <!-- ordes displayed -->
     </div></div>
-    <div class="col-md-6 col-lg-6 col-sm-6 mt-5"><div class="mt-5" style="margin-left:20px;"><div id="dispatcheddata"></div></div></div>
+    <div class="col-md-6 col-lg-6 col-sm-6 mt-5"><div class="mt-5" style="margin-left:20px;">
+    <div id="dispatcheddata"></div></div></div>
     </div></div>
     <?php
     include('footer.php');
@@ -29,6 +30,8 @@
     <script src="CHeader.js"></script>
     <script>
     $(document).ready(function(){
+        function dispatcheddata()
+        {
         $.ajax({
                     url:"fetchdispatchproduct.php",
                     success:function(data)
@@ -36,18 +39,23 @@
                         $('#dispatcheddata').html(data);
                     }
             });
+        }
+        dispatcheddata();
         var date = new Date();
         $('#time').html(date);
-        
+        function productorders()
+        {
         $.ajax({
             url:"fetchorders.php",
             success:function(data)
             {
                 $('#product_orders').append(data);
             }
-        });
+         });
+        }
+        productorders();
         $(document).on("click",".add-discard",function(){
-            var tbltr=$(this);
+            // alert("good night");
             var id = $(this).data("id");
             var pid = $(this).data("pd");
             var qnt =$(this).data("qnt");
@@ -59,8 +67,12 @@
                 data:{id:id,pid:pid,qnt:qnt,payment:payment,ordid:ordid},
                 success:function(data)
                 {
+                    // alert(data);
                     setTimeout(() => {
-                        document.location.reload();
+                         $('#product_orders').load(' #product_orders');
+                        // $('#dispatcheddata').load(' #dispatcheddata');
+                        dispatcheddata();
+                        productorders();
                     }, 100);
                 }
             })

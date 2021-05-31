@@ -11,7 +11,7 @@ $output ="";
 $total ="";
 if(mysqli_num_rows($result)>0)
 {
-    $output.="<table class='table' id='order'><tr><th colspan='6'>ORDERED PRODUCT DETAILS</th></tr><tr><th>#</th><th>ORDER ID</th><th>PRODUCT</th><th>PRICE</th><th>QUANTITY</th><th>TOTAL</th></tr>";
+    $output.="<button class='btn print'><i class='fas fa-print fa-2x'></i></button><table class='table table-sm' id='order'><tr><th colspan='6'>ORDERED PRODUCT DETAILS</th></tr><tr><th>#</th><th>ORDER ID</th><th>PRODUCT</th><th>PRICE</th><th>QUANTITY</th><th>TOTAL</th></tr>";
     while($row = mysqli_fetch_assoc($result))
     {
         $total;

@@ -37,8 +37,6 @@
             box-sizing:border-box;
             /* box-shadow:10px 5px 20px 0px black; */
         }
-        
-        }
         a:hover{
             color:red;
         }
@@ -48,19 +46,23 @@
         {
             text-transform:uppercase;
         }
-        
+        .newheader li
+        {
+            display:inline-flex;
+            box-sizing:border-box;
+        }
         #cart
         {
             font-size:15px;
             color:red;
         }
-        .newheader div a .btn
+        .newheader li a .btn
         {
             /* padding:5px; */
             margin-left:10px;
             border:2px solid indigo;
         }
-    .newheader div .btn:hover
+    .newheader li .btn:hover
         {
             background-color:indigo;
             color:white;
@@ -70,25 +72,31 @@
             font-weight:bolder;
             background:white;
         }
-       
+      .kt
+      {
+            box-shadow:0px 5px 5px 0px indigo;
+            background:black;
+            color:white;
+      } 
     </style>
 </head>
 <body>
 
-<div class="container-fluid newheader"><div class="row">
-<div class="nav-item"><a href="#" class="nav-link"><div class="btn ">GSMS</div></a></div>
-<div class="nav-item"><a href="index.php" class="nav-link"><div class="btn "><i class="fab fa-windows"></i>Home</div></a></div>
-    <div class="nav-item n"><a href="C_spices.php" class="nav-link"><div class="btn"><i class="fab fa-product-hunt"></i>Spices</div></a></div>
-    <div class="nav-item n"><a href="C_driedlegumes.php" class="nav-link"><div class="btn  "><i class="fab fa-first-order"></i>Legumes</div></a></div>
-    <div class="nav-item n"><a href="C_grains.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i>Grains</div></a></div>
-    <div class="nav-item n"><a href="C_other.php" class="nav-link"><div class="btn"><i class="fa fa-list-alt"></i>Other</div></a></div>
-    <div class="nav-item n"><a href="C_newproducts.php" class="nav-link"><div class="btn"><i class="fab fa-bandcamp"></i>New</div></a></div>
-    <div class="nav-item n"><a href="C_mycart.php" class="nav-link"><div class="btn"><i class="fa fa-shopping-cart"></i><div class="badge badge-pill"><b id="cart">
+<div class="container-fluid newheader"><div class="row"><ul>
+<li  class="nav-item"><a href="#" class="nav-link"><div style="align-left:100px;" class="btn kt">GSMS</div></a></li>
+<li class="nav-item"><a href="index.php" class="nav-link"><div class="btn kt"><i class="fab fa-windows"></i>Home</div></a></li>
+    <li class="nav-item n"><a href="C_spices.php" class="nav-link"><div class="btn kt"><i class="fab fa-product-hunt"></i>Spices</div></a></li>
+    <li class="nav-item n"><a href="C_driedlegumes.php" class="nav-link"><div class="btn kt"><i class="fab fa-first-order"></i>Legumes</div></a></li>
+    <li class="nav-item n"><a href="C_grains.php" class="nav-link"><div class="btn kt"><i class="fa fa-list-alt"></i>Grains</div></a></li>
+    <li class="nav-item n"><a href="C_other.php" class="nav-link"><div class="btn kt"><i class="fa fa-list-alt"></i>Other</div></a></li>
+    <li class="nav-item n"><a href="C_newproducts.php" class="nav-link"><div class="btn kt"><i class="fab fa-bandcamp"></i>New</div></a></li>
+    <li class="nav-item n"><a href="C_mycart.php" class="nav-link"><div class="btn kt"><i class="fa fa-shopping-cart"></i><div class="badge badge-pill" id="cartload"><b id="cart">
     <?php $count = count($_SESSION["shoping-cart"]); 
         echo $count;
-     ?></b></div>My Cart</div></a></div>
-    <div class="nav-item n"><a href="C_myaccount.php" class="nav-link"><div class="btn  "><i class="fas fa-user"></i><small class="text-uppercase"><?php echo " Hi '".$c_fname."' "; ?></small></div></a></div>
-    <div class="nav-item n"><a href="c_logout.php" class="nav-link"><button class="btn btn-danger" style="width:100px"><i class="fas fa-sign-out-alt"></i></button></a></div>
+     ?></b></div>My Cart</div></a></li>
+    <li class="nav-item n"><a href="C_myaccount.php" class="nav-link"><div class="btn kt"><i class="fas fa-user"></i><small class="text-uppercase"><?php echo " Hi '".$c_fname."' "; ?></small></div></a></li>
+    <li class="nav-item n"><a href="c_logout.php" class="nav-link"><button class="btn kt" style="width:100px"><i class="fas fa-sign-out-alt"></i></button></a></li>
+    </ul>
 </div></div>
 
     <!-- <script src="Assets/js/jquery.js"></script>
