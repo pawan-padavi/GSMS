@@ -24,7 +24,7 @@ date_default_timezone_set('Asia/Kolkata');
 // echo date_default_timezone_get();
 ?>
 <div id="message"></div>
-<table class="table table-bordered table-hover mt-2">
+<table class="table table-bordered table-hover table-sm mt-2">
 <thead class="thead-dark"><tr scope="row"><th scope="col" colspan="4" class="text-center">Admin Registration</th></tr></thead>
 <tbody>
 <form id='Admin-registration' class="form-group Admin-registration" enctype="multipart/form-data">

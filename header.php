@@ -57,12 +57,14 @@ else
         .navbar li
         {
             display:inline-flex;
-            margin-left:30px; 
+            margin-left:25px;
+            
            
         }
         .navbar li a .btn
         {
             border:2px solid indigo;
+            
         }
         .navbar li a .btn:hover
         {
@@ -86,15 +88,15 @@ else
 <div class="container-fluid head"><div class="row"><div class="col-md-12 col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-info">
     <ul class="navbar-nav">
-    <li class="nav-item"><a href="Dashboard.php" class="nav-link"><div class="btn k"><i class="fab fa-windows"></i> Dashboard</div></a></li>
+    <li class="nav-item"><a href="Dashboard.php" class="nav-link"><div  class="btn k"><i class="fa fa-desktop"></i> Dashboard</div></a></li>
     <li class="nav-item"><a href="Products.php" class="nav-link"><div class="btn k"><i class="fab fa-product-hunt"></i> Products </div></a></li>
-    <li class="nav-item"><a href="Orders.php" class="nav-link"><div class="btn k"><i class="fab fa-first-order"></i> Orders</div></a></li>
+    <li class="nav-item"><a href="Orders.php" class="nav-link"><div class="btn k"><i class="fas fa-cart-plus"></i> Orders</div></a></li>
     <li class="nav-item"><a href="Category.php" class="nav-link"><div class="btn k"><i class="fa fa-list-alt"></i> Category</div></a></li>
-    <li class="nav-item"><a href="Subcategory.php" class="nav-link"><div class="btn k"><i class="fa fa-list-alt"></i> Sub</div></a></li>
+    <li class="nav-item"><a href="Subcategory.php" class="nav-link"><div class="btn k"><i class="fa fa-link"></i> Sub</div></a></li>
     <li class="nav-item"><a href="Users.php" class="nav-link"><div class="btn k"><i class="fa fa-users"></i> Users</div></a></li>
-    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn k"><i class="fas fa-edit"></i> Edit</div></a></li>
-    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn k"><small><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "."Welcome " ?></small></div></a></li>
-    <li class="nav-item"><a href="logout.php" class="nav-link"><button type="button" class="btn btn-danger k" style="width:100px;"><i class="fas fa-sign-out-alt"></i></button></a></li>
+    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn k"><i class="fas fa-cogs"></i> Edit</div></a></li>
+    <li class="nav-item"><a href="#" class="nav-link"><div class="btn k"><small><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "." " ?></small></div></a></li>
+    <li class="nav-item"><a href="logout.php" class="nav-link"><button type="button" class="btn btn-danger k " style="width:100px; color:red;"><i class="fas fa-sign-out-alt"></i></button></a></li>
     </ul>
     </nav>
 </div></div></div>

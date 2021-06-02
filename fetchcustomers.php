@@ -5,13 +5,13 @@
     $output = "";
     if(mysqli_num_rows($result)>0)
     {
-        $output .= "<table style='border:none' class='table table-borderless table-striped'>
-        <thead class='thead-dark'><tr><th colspan='6' class='text-uppercase text-center' style='font-size:2em;'>Customers</th></tr>
-        <tr><th>Fname</th><th>Mname</th><th>Lname</th><th>Mobile</th><th>Email</th><th><i id='cust_delete' class='fas fa-trash fa-2x'></i></th></tr></thead><tbody>";
+        $output .= "<table style='border:none' class='table table-borderless table-sm table-striped'>
+        <thead style='background:indigo; color:white;'>
+        <tr><th>Fname</th><th>Lname</th><th>Mobile</th><th>Email</th><th><i id='cust_delete' class='fas fa-trash fa-2x text-danger'></i></th></tr></thead><tbody>";
         while($row = mysqli_fetch_assoc($result))
         {
             $output .="<tr><td>{$row["c_fname"]}</td>
-            <td>{$row["c_mname"]}</td><td>{$row["c_lname"]}</td>
+            <td>{$row["c_lname"]}</td>
             <td>{$row["c_mobile"]}</td><td>{$row["c_email"]}</td>
             <td><input style='height:2em; width:2em;' type='checkbox' name='c_id' id='c_id' value='{$row["c_id"]}'/></td>
             </tr>";

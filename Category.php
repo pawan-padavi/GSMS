@@ -17,9 +17,7 @@
            <center><a href="Add-category.php"><button class="btn btn-primary mt-5 mb-5"><i class="fa fa-plus"></i> Add Category</button></a></center>
     <div id="view_category"></div>
     </div></div></div>
-    <?php
-    include('footer.php');
-    ?>
+    
     <script src="Assets/js/jquery.min.js"></script>
     <script src="Assets/js/all.js"></script>
     <script src="Assets/js/bootstrap.js"></script>

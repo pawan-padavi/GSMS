@@ -52,9 +52,6 @@
            </center>
     <div id="view-product"></div>
     </div></div></div>
-    <?php
-    include('footer.php');
-    ?>
     <script src="Assets/js/jquery.min.js"></script>
     <script src="Assets/js/all.js"></script>
     <script src="Assets/js/bootstrap.js"></script>
@@ -220,7 +217,20 @@
             })
         })  
     });
-
+    $(document).on("change","#p_stock",function(){
+        var p_stock = $(this).val();
+        var p_id = $(this).data('id');
+        $.ajax({
+            url:"p_stock_update.php",
+            type:"POST",
+            data:{p_stock:p_stock,p_id:p_id},
+            success:function(data)
+            {
+                $('#p_stock').load(' #p_stock');
+                viewproduct();
+            }
+        })
+    })
     </script>
 </body>
 </html>

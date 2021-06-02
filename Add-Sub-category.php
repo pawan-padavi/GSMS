@@ -25,11 +25,11 @@ date_default_timezone_set('Asia/Kolkata');
     <div class="container"><div class="row"><div class=" mt-5 col-md-12 col-lg-12 col-sm-12">
     <form id="add-sub-category" name="add-sub-category" class="form-group">
         <table class="table table-bordered mt-5">
-            <thead class="thead-dark"><tr scope="row"><th scope="col" colspan="2" class="text-center">Add Product Categories</th></tr></thead>
+            <thead class="thead-dark"><tr scope="row"><th scope="col" colspan="2" class="text-center">Add Product Sub-Categories</th></tr></thead>
             <tr scope="row"><th scope="col" class="text-right">Product Sub-Category Id</th><td scope="col"><input type="hidden" class="form-control" id="sc_id" name="sc_id" value="<?php $date= date('yis'); echo $date;?>"><?php
         $date= date('yis'); echo $date;?></td></tr>
 
-        <tr scope="row"><th scope="col" class="text-right">Product Category</th>
+        <tr scope="row"><th scope="col" class="text-right">Product  Category</th>
                         
         <td scope="col"><div id="category"></div></td></tr>
 

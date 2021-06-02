@@ -40,7 +40,7 @@
       }  
       .footer-margin
       {
-            margin-top:100px;
+            margin-top:25px;
       }
     </style>
 </head>
@@ -49,7 +49,7 @@
       <div class="container-fluid footer-margin">
       <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-12">
-      <div class="card border footer mt-2 mb-5" style="height:20em;"><div class="card-header"><i class="fa fa-users"></i> About</div><div class="card-body ft" ><ul>
+      <div class="card border footer mt-2 mb-5 " style="height:20em;"><div class="card-header"><i class="fa fa-users"></i> About</div><div class="card-body ft" ><ul>
       <li><a href="#"> Contact Us</a></li><li><a href="#"> About Us</a></li><li><a href="#">Press</a></li></ul></div></div></div>
 <!--  -->
       <div class="col-lg-3 col-md-6 col-sm-12">

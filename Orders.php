@@ -21,9 +21,6 @@
     <div class="col-md-6 col-lg-6 col-sm-6 mt-5"><div class="mt-5" style="margin-left:20px;">
     <div id="dispatcheddata"></div></div></div>
     </div></div>
-    <?php
-    include('footer.php');
-    ?>
     <script src="Assets/js/jquery.min.js"></script>
     <script src="Assets/js/all.js"></script>
     <script src="Assets/js/bootstrap.js"></script>

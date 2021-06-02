@@ -10,9 +10,17 @@ $dp_from = date('Y:m:d');
 $dlvrto =date('Y:m:d',strtotime('+2 day'));
 // echo "ID: $id PID: $p_id QNT: $qnt PAYMENT: $payment DPID: $dp_id ORDID: $ordid DISPATCH: $dp_from  Deliver: $dlvrto";
 $query ="INSERT INTO dispatchproduct values({$dp_id},{$ordid},{$id},{$p_id},{$qnt},'{$payment}','{$dp_from}','{$dlvrto}')"; 
-if($result = mysqli_query($connection,$query))
+$query1 ="UPDATE product_quantity SET p_stock = p_stock-$qnt WHERE p_id=$p_id";
+if(mysqli_query($connection,$query))
 {
-        echo"Data Dispatched";
+   if(mysqli_query($connection,$query1))
+   {
+    echo"Data Dispatched";
+   }
+   else
+   {
+       echo "Data not dispatched";
+   }
 }
 else
 {

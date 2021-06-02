@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Users.php page</title>
+    <title>Welcome to GSMS</title>
     <link rel="stylesheet" href="Assets/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/css/all.css">
 </head>
@@ -11,19 +11,18 @@
     <?php
     include('header.php');
     ?>
-    <div class="container-fluid"><div class="row">
+    <div class="container">
+    <div class="row">
     <div class="col-md-6 col-lg-6 col-sm-6 mt-5">
     <!-- Customers -->
     <div id="customers" class="mt-5"></div>
     </div>
-    <div class="col-md-6 col-lg-6 col-sm-6 mt-5"><div class="w-100  bg-warning  mt-4 text-uppercase"><h1>transactions</h1></div>
+    <div class="col-md-6 col-lg-6 col-sm-6 mt-5">
     <!-- Transactions -->
-    <span id="transactions"></span>
+    <div id="transactions" class="mt-5"></div>
     </div>
     </div></div>
-    <?php
-    include('footer.php');
-    ?>
+    
     <script src="Assets/js/jquery.min.js"></script>
     <script src="Assets/js/all.js"></script>
     <script src="Assets/js/bootstrap.js"></script>

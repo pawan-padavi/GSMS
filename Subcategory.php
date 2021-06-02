@@ -20,9 +20,7 @@
            <!-- sub category display view -->
            <div id="view_sub_category"></div>
     </div></div></div>
-    <?php
-    include('footer.php');
-    ?>
+    
     <script src="Assets/js/jquery.min.js"></script>
     <script src="Assets/js/all.js"></script>
     <script src="Assets/js/bootstrap.js"></script>

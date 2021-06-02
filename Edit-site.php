@@ -12,9 +12,7 @@
     include('header.php');
     ?>
     <div class="container"><div class="row"><div class="col-md-12 col-lg-12 col-sm-12"><h5 class="text-center">Edit site page under construction</h5></div></div></div>
-    <?php
-    include('footer.php');
-    ?>
+    
     <script src="Assets/js/jquery.min.js"></script>
     <script src="Assets/js/all.js"></script>
     <script src="Assets/js/bootstrap.js"></script>

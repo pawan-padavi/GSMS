@@ -5,7 +5,7 @@
     $output= "";
     if(mysqli_num_rows($result) > 0)
     {
-        $output = '<small><form id=""><table class="table table-sm table-hover table-bordered">
+        $output = '<small><form id="" class="form-group"><table class="table table-sm table-hover table-bordered">
         <thead class="text-center thead-light">
         <tr scope="row">
         <th scope="col"><button class="btn"><i class="fas fa-trash fa-2x text-danger" id="delete-button"></i></button></th>
@@ -20,7 +20,7 @@
         </tr></thead>';
         while ($row=mysqli_fetch_assoc($result)) {
             $output .="<tbody class='text-center'><tr><td><input type='checkbox' value='{$row["p_id"]}'style='width:2em; height:2em;' /></td><td><input type='hidden' name='p_id' id='p_id' value='{$row["p_id"]}'>{$row["p_id"]}</td>
-            <td><input type='hidden' name='p_name'id='p_name' class='form-control w-100' value='{$row["p_name"]}'>{$row["p_stock"]}</td>
+            <td><input type='hidden' name='p_name'id='p_name' class='form-control' value='{$row["p_name"]}'><input style='border:none; width:75px;'  class='form-control' type='number' name='p_stock' id='p_stock' data-id='{$row["p_id"]}'/><span style='color:green; font-size:20px; line-height:5px;'>{$row["p_stock"]}</span></td>
             <td><img src='Assets/upload-images/{$row["p_img"]}'alt='image not found' height='60'></img></td>
             <input type='hidden' name='pdesc'id='pdesc' class='form-control w-100' value='{$row["pdesc"]}'>
             <td><input type='hidden' name='c_name'id='c_name' class='form-control w-100' value='{$row["c_name"]}'>{$row["p_name"]}</td>

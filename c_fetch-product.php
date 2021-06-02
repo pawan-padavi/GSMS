@@ -1,6 +1,6 @@
 <?php
     include('config.php');
-    $query = "SELECT * FROM product inner join product_quantity on product.p_id=product_quantity.p_id";
+    $query = "SELECT * FROM product inner join product_quantity on product.p_id=product_quantity.p_id where product_quantity.p_stock>0";
     $result =  mysqli_query($connection,$query);
     $output = "";
     $price = 300;
