@@ -84,7 +84,7 @@ include('header.php');
 <li style="background:lightblue;" class="mt-5"><span id="c_count"></span></li>
 <li style="background:brown;" class="mt-5"><span id="u_count"></span></li>
 <li style="background:silver;" class="mt-5"><span id="s_count"></span></li>
-<li style="background:yellow;" class="mt-5"><span id="t_count"></span></li>
+<li style="background:TOMATO;" class="mt-5"><span id="t_count"></span></li>
 </ul>
 </div>
 </div>
@@ -188,7 +188,7 @@ include('header.php');
         function t_count()
         {
             $.ajax({
-                    url:"prod_count.php",
+                    url:"gsms_count.php",
                     success:function(data)
                     {   
                         $('#t_count').html(data);
