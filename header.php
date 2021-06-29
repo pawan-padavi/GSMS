@@ -90,11 +90,11 @@ else
     <ul class="navbar-nav">
     <li class="nav-item"><a href="Dashboard.php" class="nav-link"><div  class="btn k"><i class="fa fa-desktop"></i> Dashboard</div></a></li>
     <li class="nav-item"><a href="Products.php" class="nav-link"><div class="btn k"><i class="fab fa-product-hunt"></i> Products </div></a></li>
-    <li class="nav-item"><a href="Orders.php" class="nav-link"><div class="btn k"><i class="fas fa-truck"></i> Orders</div></a></li>
+    <li class="nav-item"><a href="Orders.php" class="nav-link"><div class="btn k"><i class="fas fa-cart-plus"></i> Orders</div></a></li>
     <li class="nav-item"><a href="Category.php" class="nav-link"><div class="btn k"><i class="fa fa-list-alt"></i> Category</div></a></li>
     <li class="nav-item"><a href="Subcategory.php" class="nav-link"><div class="btn k"><i class="fa fa-link"></i> Sub</div></a></li>
     <li class="nav-item"><a href="Users.php" class="nav-link"><div class="btn k"><i class="fa fa-users"></i> Users</div></a></li>
-    <li class="nav-item"><a href="delivery.php" class="nav-link"><div class="btn k"><i class="fas fa-clipboard-check"></i> Deliverd</div></a></li>
+    <li class="nav-item"><a href="Edit-site.php" class="nav-link"><div class="btn k"><i class="fas fa-cogs"></i> Edit</div></a></li>
     <li class="nav-item"><a href="#" class="nav-link"><div class="btn k"><small><?php echo"Hi "." <b>'". $_SESSION["fname"]."'</b> "." " ?></small></div></a></li>
     <li class="nav-item"><a href="logout.php" class="nav-link"><button type="button" class="btn btn-danger k " style="width:100px; color:red;"><i class="fas fa-sign-out-alt"></i></button></a></li>
     </ul>

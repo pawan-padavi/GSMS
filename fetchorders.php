@@ -22,7 +22,7 @@ if(mysqli_num_rows($result)>0)
                 <td class='bor'>{$row["p_id"]}</td>
                 <td class='bor'>{$row["p_quantity"]}</td>
                 <td class='bor'>{$row["payment"]}</td>
-                <th class='bor'><button data-payment='{$row["payment"]}' data-id='{$row["c_id"]}' data-pd='{$row["p_id"]}' data-qnt='{$row["p_quantity"]}' data-ordid ='{$row["ordid"]}' class='btn btn-success add-discard'><i class='fas fa-check-circle'> </i>Send To Warehouse</button></th>
+                <th class='bor'><button data-payment='{$row["payment"]}' data-id='{$row["c_id"]}' data-pd='{$row["p_id"]}' data-qnt='{$row["p_quantity"]}' data-ordid ='{$row["ordid"]}' class='btn btn-success add-discard'><i class='fas fa-check-circle'> </i>Dispatch</button></th>
                 </tr>";
     }
     echo $output.="</table>";
